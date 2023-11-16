@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Context\" />
-    <Folder Include="Mapping\" />
     <Folder Include="Repository\" />
   </ItemGroup>
 
@@ -24,6 +23,10 @@
     </PackageReference>
     <PackageReference Include="MySqlConnector" Version="2.2.7" />
     <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="7.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Consultorio\Consultorio.Domain.csproj" />
   </ItemGroup>
 
 </Project>

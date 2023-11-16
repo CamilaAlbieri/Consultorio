@@ -1,12 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Consultorio.Domain.Base;
 
-namespace Consultorio.Entities
+namespace Consultorio.Domain.Entities
 {
-    internal class Atende
+    public class Atende : BaseEntity<int>
     {
+
+        public Atende() { }
+
+        public Atende(int id, Dentista? dentista, Convenio? convenio)
+        {
+            Dentista = dentista;
+            Convenio = convenio;
+        }
+
+        public Dentista? Dentista { get; set; }
+        public Convenio? Convenio { get; set; }
     }
 }

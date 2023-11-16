@@ -1,12 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Consultorio.Domain.Base;
 
-namespace Consultorio.Entities
+namespace Consultorio.Domain.Entities
 {
-    internal class Especialidade
+    public class Especialidade : BaseEntity<int>
     {
+        public Especialidade() { }
+        public Especialidade(int id, string? nome) : base(id) 
+        {
+            Nome = nome;
+        }
+        public string? Nome { get; set; }
     }
 }
