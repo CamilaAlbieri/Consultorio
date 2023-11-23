@@ -1,6 +1,4 @@
-﻿using Consultorio.Domain.Base;
-
-namespace Consultorio.Domain.Base
+﻿namespace Consultorio.Domain.Base
 {
     public interface IBaseRepository<TEntity> where TEntity : IBaseEntity
     {
