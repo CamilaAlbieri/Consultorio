@@ -13,10 +13,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.11" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
     <PackageReference Include="ReaLTaiizor" Version="3.7.9.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Consultorio.Repository\Consultorio.Repository.csproj" />
+    <ProjectReference Include="..\Consultorio.Service\Consultorio.Service.csproj" />
+    <ProjectReference Include="..\Consultorio\Consultorio.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

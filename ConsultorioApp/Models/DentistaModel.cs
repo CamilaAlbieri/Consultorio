@@ -4,17 +4,17 @@
     {
         public DentistaModel()
         {
-            Especialidades = new List<DentistaEspecialidade>();
+            Especialidades = new List<DentistaEspecialidadeModel>();
         }
 
         public int Id { get; set; }
         public string? Nome { get; set; }
         public string? Telefone { get; set; }
         public string? CPF { get; set; }
-        public List<DentistaEspecialidade> Especialidades { get; set; }
+        public List<DentistaEspecialidadeModel> Especialidades { get; set; }
     }
 
-    public class DentistaEspecialidade
+    public class DentistaEspecialidadeModel
     {
         public int Id { get; set; }
        

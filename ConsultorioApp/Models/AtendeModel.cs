@@ -4,7 +4,13 @@ namespace ConsultorioApp.Models
 {
     public class AtendeModel
     {
-        public int Id { get; set; }
+        
+        //public Dentista? Dentista { get; set; }
+
+        public int IdDentista { get; set; }
+        public string ?NomeDentista { get; set; }
+
+        //public Convenio? Convenio { get; set; }
 
     }
 }

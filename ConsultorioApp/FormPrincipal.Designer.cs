@@ -31,6 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dentistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.convênioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.especialidadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pesquisaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -49,16 +54,53 @@
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStrip1.Size = new System.Drawing.Size(682, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(722, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.UseWaitCursor = true;
             // 
             // cadastrosToolStripMenuItem
             // 
+            this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dentistaToolStripMenuItem,
+            this.pacienteToolStripMenuItem,
+            this.consultaToolStripMenuItem,
+            this.convênioToolStripMenuItem,
+            this.especialidadeToolStripMenuItem});
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
+            // 
+            // dentistaToolStripMenuItem
+            // 
+            this.dentistaToolStripMenuItem.Name = "dentistaToolStripMenuItem";
+            this.dentistaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dentistaToolStripMenuItem.Text = "Dentista";
+            this.dentistaToolStripMenuItem.Click += new System.EventHandler(this.dentistaToolStripMenuItem_Click);
+            // 
+            // pacienteToolStripMenuItem
+            // 
+            this.pacienteToolStripMenuItem.Name = "pacienteToolStripMenuItem";
+            this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pacienteToolStripMenuItem.Text = "Paciente";
+            // 
+            // consultaToolStripMenuItem
+            // 
+            this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultaToolStripMenuItem.Text = "Consulta";
+            // 
+            // convênioToolStripMenuItem
+            // 
+            this.convênioToolStripMenuItem.Name = "convênioToolStripMenuItem";
+            this.convênioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.convênioToolStripMenuItem.Text = "Convênio";
+            // 
+            // especialidadeToolStripMenuItem
+            // 
+            this.especialidadeToolStripMenuItem.Name = "especialidadeToolStripMenuItem";
+            this.especialidadeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.especialidadeToolStripMenuItem.Text = "Especialidade";
             // 
             // pesquisaToolStripMenuItem
             // 
@@ -79,7 +121,7 @@
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(686, 420);
+            this.ClientSize = new System.Drawing.Size(726, 506);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ForeColor = System.Drawing.SystemColors.ControlDark;
@@ -98,7 +140,6 @@
             this.TransparencyKey = System.Drawing.Color.White;
             this.UseWaitCursor = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FormPrincipal_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -112,5 +153,10 @@
         private ToolStripMenuItem cadastrosToolStripMenuItem;
         private ToolStripMenuItem pesquisaToolStripMenuItem;
         private ToolStripMenuItem sairToolStripMenuItem;
+        private ToolStripMenuItem dentistaToolStripMenuItem;
+        private ToolStripMenuItem pacienteToolStripMenuItem;
+        private ToolStripMenuItem consultaToolStripMenuItem;
+        private ToolStripMenuItem convênioToolStripMenuItem;
+        private ToolStripMenuItem especialidadeToolStripMenuItem;
     }
 }
