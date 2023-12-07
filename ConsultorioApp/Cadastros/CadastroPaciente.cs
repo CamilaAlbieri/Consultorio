@@ -16,6 +16,14 @@ namespace Consultorio.App.Base
             _pacienteService = pacienteService;
             _convenioService = convenioService;
             InitializeComponent();
+            CarregaCombo();
+        }
+
+        private void CarregaCombo()
+        {
+            cboConvenio.ValueMember = "Id";
+            cboConvenio.DisplayMember= "Name";
+            cboConvenio.DataSource = _convenioService.Get<ConvenioModel>().ToList();
         }
 
         private void PreencheObjeto(Paciente paciente)
@@ -24,7 +32,28 @@ namespace Consultorio.App.Base
             paciente.Telefone = txtTelefone.Text;
             paciente.CPF= txtCPF.Text;
             paciente.Observacao= txtObservacao.Text;
+
+            if(int.TryParse(cboConvenio.SelectedValue.ToString(), out var idGrupo))
+            {
+                var convenio = _convenioService.GetById<Convenio>(idGrupo);
+                paciente.Convenio = convenio;
+            }
         }
+
+        /*
+        protected override void Salvar()
+        {
+            try
+            {
+                if (isAlteracao)
+                {
+                    if())
+                    {
+                       
+                    }
+                }
+            }
+        }*/
 
 
     }

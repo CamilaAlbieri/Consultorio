@@ -32,25 +32,37 @@
             this.txtTelefone = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             this.txtCPFD = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             this.cboEspecialidade = new ReaLTaiizor.Controls.MaterialComboBox();
-            this.materialTabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.cmbPesquisaDentista = new ReaLTaiizor.Controls.MaterialComboBox();
+            this.btmPesquisar = new ReaLTaiizor.Controls.MaterialButton();
+            this.tabCadastro.SuspendLayout();
+            this.tabPageCadastro.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.tabPageConsulta.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.cboEspecialidade);
-            this.tabPage1.Controls.Add(this.txtCPFD);
-            this.tabPage1.Controls.Add(this.txtTelefone);
-            this.tabPage1.Controls.Add(this.txtNome);
-            this.tabPage1.Controls.SetChildIndex(this.panel1, 0);
-            this.tabPage1.Controls.SetChildIndex(this.txtNome, 0);
-            this.tabPage1.Controls.SetChildIndex(this.txtTelefone, 0);
-            this.tabPage1.Controls.SetChildIndex(this.txtCPFD, 0);
-            this.tabPage1.Controls.SetChildIndex(this.cboEspecialidade, 0);
+            this.tabPageCadastro.Controls.Add(this.cboEspecialidade);
+            this.tabPageCadastro.Controls.Add(this.txtCPFD);
+            this.tabPageCadastro.Controls.Add(this.txtTelefone);
+            this.tabPageCadastro.Controls.Add(this.txtNome);
+            this.tabPageCadastro.Controls.SetChildIndex(this.panel1, 0);
+            this.tabPageCadastro.Controls.SetChildIndex(this.txtNome, 0);
+            this.tabPageCadastro.Controls.SetChildIndex(this.txtTelefone, 0);
+            this.tabPageCadastro.Controls.SetChildIndex(this.txtCPFD, 0);
+            this.tabPageCadastro.Controls.SetChildIndex(this.cboEspecialidade, 0);
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(4, 246);
+            this.panel1.Location = new System.Drawing.Point(4, 360);
+            // 
+            // tabPage2
+            // 
+            this.tabPageConsulta.Controls.Add(this.panel3);
+            this.tabPageConsulta.Controls.SetChildIndex(this.panel2, 0);
+            this.tabPageConsulta.Controls.SetChildIndex(this.panel3, 0);
             // 
             // txtNome
             // 
@@ -192,16 +204,73 @@
             this.cboEspecialidade.StartIndex = 0;
             this.cboEspecialidade.TabIndex = 4;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btmPesquisar);
+            this.panel3.Controls.Add(this.cmbPesquisaDentista);
+            this.panel3.Location = new System.Drawing.Point(9, 6);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(497, 193);
+            this.panel3.TabIndex = 5;
+            // 
+            // cmbPesquisaDentista
+            // 
+            this.cmbPesquisaDentista.AutoResize = false;
+            this.cmbPesquisaDentista.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbPesquisaDentista.Depth = 0;
+            this.cmbPesquisaDentista.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbPesquisaDentista.DropDownHeight = 174;
+            this.cmbPesquisaDentista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPesquisaDentista.DropDownWidth = 121;
+            this.cmbPesquisaDentista.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cmbPesquisaDentista.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cmbPesquisaDentista.FormattingEnabled = true;
+            this.cmbPesquisaDentista.Hint = "Dentista";
+            this.cmbPesquisaDentista.IntegralHeight = false;
+            this.cmbPesquisaDentista.ItemHeight = 43;
+            this.cmbPesquisaDentista.Location = new System.Drawing.Point(16, 39);
+            this.cmbPesquisaDentista.MaxDropDownItems = 4;
+            this.cmbPesquisaDentista.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.cmbPesquisaDentista.Name = "cmbPesquisaDentista";
+            this.cmbPesquisaDentista.Size = new System.Drawing.Size(461, 49);
+            this.cmbPesquisaDentista.StartIndex = 0;
+            this.cmbPesquisaDentista.TabIndex = 1;
+            // 
+            // btmPesquisar
+            // 
+            this.btmPesquisar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btmPesquisar.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btmPesquisar.Depth = 0;
+            this.btmPesquisar.HighEmphasis = true;
+            this.btmPesquisar.Icon = null;
+            this.btmPesquisar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.btmPesquisar.Location = new System.Drawing.Point(192, 136);
+            this.btmPesquisar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btmPesquisar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.btmPesquisar.Name = "btmPesquisar";
+            this.btmPesquisar.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btmPesquisar.Size = new System.Drawing.Size(100, 36);
+            this.btmPesquisar.TabIndex = 15;
+            this.btmPesquisar.Text = "Pesquisar";
+            this.btmPesquisar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btmPesquisar.UseAccentColor = false;
+            this.btmPesquisar.UseVisualStyleBackColor = true;
+            // 
             // CadastroDentista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(536, 416);
+            this.ClientSize = new System.Drawing.Size(536, 544);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "CadastroDentista";
             this.Text = "CadastroDentista";
-            this.materialTabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.tabCadastro.ResumeLayout(false);
+            this.tabPageCadastro.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.tabPageConsulta.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -214,5 +283,8 @@
         private ReaLTaiizor.Controls.MaterialComboBox cboEspecialidade;
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtCPFD;
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtTelefone;
+        private Panel panel3;
+        private ReaLTaiizor.Controls.MaterialComboBox cmbPesquisaDentista;
+        private ReaLTaiizor.Controls.MaterialButton btmPesquisar;
     }
 }

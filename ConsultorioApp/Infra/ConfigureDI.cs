@@ -26,7 +26,7 @@ namespace Consultorio.App.Infra
             Services = new ServiceCollection();
             Services.AddDbContext<MySqlContext>(options =>
             {
-                var strCon = File.ReadAllText("Config/DatabaseSettings.txt");
+                var strCon = File.ReadAllText(@"Conf\DatabaseSettings.txt");
                 options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
                 options.EnableSensitiveDataLogging();
 
@@ -47,13 +47,17 @@ namespace Consultorio.App.Infra
             Services.AddScoped<IBaseRepository<Especialidade>, BaseRepository<Especialidade>>();
             Services.AddScoped<IBaseRepository<Paciente>, BaseRepository<Paciente>>();
 
+
+
             // Services
-            Services.AddScoped<IBaseRepository<Atende>, BaseService<Atende>>();
-            Services.AddScoped<IBaseRepository<Consulta>, BaseService<Consulta>>();
-            Services.AddScoped<IBaseRepository<Convenio>, BaseService<Convenio>>();
-            Services.AddScoped<IBaseRepository<Dentista>, BaseService<Dentista>>();
-            Services.AddScoped<IBaseRepository<Especialidade>, BaseService<Especialidade>>();
-            Services.AddScoped<IBaseRepository<Paciente>, BaseService<Paciente>>();
+
+            Services.AddScoped<IBaseService<Atende>, BaseService<Atende>>();
+            Services.AddScoped<IBaseService<Consulta>, BaseService<Consulta>>();
+            Services.AddScoped<IBaseService<Convenio>, BaseService<Convenio>>();
+            Services.AddScoped<IBaseService<Dentista>, BaseService<Dentista>>();
+            Services.AddScoped<IBaseService<Especialidade>, BaseService<Especialidade>>();
+            Services.AddScoped<IBaseService<Paciente>, BaseService<Paciente>>();
+
 
             // Formulários
             Services.AddTransient<CadastroConsulta, CadastroConsulta>();
@@ -61,18 +65,32 @@ namespace Consultorio.App.Infra
             Services.AddTransient<CadastroDentista, CadastroDentista>();
             Services.AddTransient<CadastroEspecialidade, CadastroEspecialidade>();
             Services.AddTransient<CadastroPaciente, CadastroPaciente>();
-            Services.AddTransient<CadastroAtende, CadastroAtende>();
-
 
             // Mapping
             Services.AddSingleton(new MapperConfiguration(config =>
             {
                 config.CreateMap<Atende, AtendeModel>()
                     .ForMember(d => d.IdDentista, d => d.MapFrom(x => $"{x.Dentista!.Id}"))
-                    .ForMember(d => d.NomeDentista, d => d.MapFrom(x => $"{x.Dentista!.Nome}"));
-                config.CreateMap<Consulta, ConsultaModel>
-                    
-                    
+                    .ForMember(d => d.NomeDentista, d => d.MapFrom(x => $"{x.Dentista!.Nome}"))
+                    .ForMember(d => d.idConvenio, d => d.MapFrom(x => $"{x.Convenio!.Id}"))
+                    .ForMember(d => d.nomeConvenio, d => d.MapFrom(x => $"{x.Convenio!.Nome}"));
+
+                config.CreateMap<Consulta, ConsultaModel>()
+                    .ForMember(d => d.idDentista, d => d.MapFrom(x => $"{x.Dentista!.Id}"))
+                    .ForMember(d => d.nomeDentista, d => d.MapFrom(x => $"{x.Dentista!.Nome}"))
+                    .ForMember(d => d.idPaciente, d => d.MapFrom(x => $"{x.Paciente!.Id}"))
+                    .ForMember(d => d.nomePaciente, d => d.MapFrom(x => $"{x.Paciente!.Nome}"));
+
+                config.CreateMap<DentistaEspecialidade, DentistaModel>()
+                    .ForMember(d => d.idEspecialidade, d => d.MapFrom(x => $"{x.Especialidade!.Id}"))
+                    .ForMember(d => d.nomeEspecialidade, d => d.MapFrom(x => $"{x.Especialidade!.Nome}"));
+
+                config.CreateMap<Paciente, PacienteModel>()
+                    .ForMember(d => d.idConvenio, d => d.MapFrom(x => $"{x.Convenio!.Id}"))
+                    .ForMember(d => d.nomeConvenio, d => d.MapFrom(x => $"{x.Convenio!.Nome}"));
+
+
+                config.CreateMap<Especialidade, EspecialidadeModel>();
 
             }).CreateMapper());
 
@@ -81,5 +99,5 @@ namespace Consultorio.App.Infra
 
     }
 
-    }
 }
+

@@ -25,6 +25,10 @@ namespace Consultorio.App.Cadastros
         
         }
 
+        protected override void Salvar()
+        {
+            
+        }
 
 
 

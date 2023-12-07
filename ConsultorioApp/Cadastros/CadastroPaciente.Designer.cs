@@ -33,27 +33,40 @@
             this.txtNome = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.txtObservacao = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             this.cboConvenio = new ReaLTaiizor.Controls.MaterialComboBox();
-            this.materialTabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btmPesquisar = new ReaLTaiizor.Controls.MaterialButton();
+            this.cboPesquisaConsulta = new ReaLTaiizor.Controls.MaterialComboBox();
+            this.cboPesquisaNomePaciente = new ReaLTaiizor.Controls.MaterialComboBox();
+            this.tabCadastro.SuspendLayout();
+            this.tabPageCadastro.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.tabPageConsulta.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.cboConvenio);
-            this.tabPage1.Controls.Add(this.txtObservacao);
-            this.tabPage1.Controls.Add(this.txtCPF);
-            this.tabPage1.Controls.Add(this.txtTelefone);
-            this.tabPage1.Controls.Add(this.txtNome);
-            this.tabPage1.Controls.SetChildIndex(this.panel1, 0);
-            this.tabPage1.Controls.SetChildIndex(this.txtNome, 0);
-            this.tabPage1.Controls.SetChildIndex(this.txtTelefone, 0);
-            this.tabPage1.Controls.SetChildIndex(this.txtCPF, 0);
-            this.tabPage1.Controls.SetChildIndex(this.txtObservacao, 0);
-            this.tabPage1.Controls.SetChildIndex(this.cboConvenio, 0);
+            this.tabPageCadastro.Controls.Add(this.cboConvenio);
+            this.tabPageCadastro.Controls.Add(this.txtObservacao);
+            this.tabPageCadastro.Controls.Add(this.txtCPF);
+            this.tabPageCadastro.Controls.Add(this.txtTelefone);
+            this.tabPageCadastro.Controls.Add(this.txtNome);
+            this.tabPageCadastro.Controls.SetChildIndex(this.panel1, 0);
+            this.tabPageCadastro.Controls.SetChildIndex(this.txtNome, 0);
+            this.tabPageCadastro.Controls.SetChildIndex(this.txtTelefone, 0);
+            this.tabPageCadastro.Controls.SetChildIndex(this.txtCPF, 0);
+            this.tabPageCadastro.Controls.SetChildIndex(this.txtObservacao, 0);
+            this.tabPageCadastro.Controls.SetChildIndex(this.cboConvenio, 0);
             // 
             // panel1
             // 
             this.panel1.Location = new System.Drawing.Point(4, 338);
+            // 
+            // tabPage2
+            // 
+            this.tabPageConsulta.Controls.Add(this.panel3);
+            this.tabPageConsulta.Controls.SetChildIndex(this.panel2, 0);
+            this.tabPageConsulta.Controls.SetChildIndex(this.panel3, 0);
             // 
             // txtCPF
             // 
@@ -226,6 +239,82 @@
             this.cboConvenio.StartIndex = 0;
             this.cboConvenio.TabIndex = 8;
             // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btmPesquisar);
+            this.panel3.Controls.Add(this.cboPesquisaConsulta);
+            this.panel3.Controls.Add(this.cboPesquisaNomePaciente);
+            this.panel3.Location = new System.Drawing.Point(9, 6);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(497, 193);
+            this.panel3.TabIndex = 5;
+            // 
+            // btmPesquisar
+            // 
+            this.btmPesquisar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btmPesquisar.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btmPesquisar.Depth = 0;
+            this.btmPesquisar.HighEmphasis = true;
+            this.btmPesquisar.Icon = null;
+            this.btmPesquisar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            this.btmPesquisar.Location = new System.Drawing.Point(195, 140);
+            this.btmPesquisar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btmPesquisar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            this.btmPesquisar.Name = "btmPesquisar";
+            this.btmPesquisar.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btmPesquisar.Size = new System.Drawing.Size(100, 36);
+            this.btmPesquisar.TabIndex = 17;
+            this.btmPesquisar.Text = "Pesquisar";
+            this.btmPesquisar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btmPesquisar.UseAccentColor = false;
+            this.btmPesquisar.UseVisualStyleBackColor = true;
+            // 
+            // cboPesquisaConsulta
+            // 
+            this.cboPesquisaConsulta.AutoResize = false;
+            this.cboPesquisaConsulta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboPesquisaConsulta.Depth = 0;
+            this.cboPesquisaConsulta.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cboPesquisaConsulta.DropDownHeight = 174;
+            this.cboPesquisaConsulta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPesquisaConsulta.DropDownWidth = 121;
+            this.cboPesquisaConsulta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cboPesquisaConsulta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cboPesquisaConsulta.FormattingEnabled = true;
+            this.cboPesquisaConsulta.Hint = "Consulta";
+            this.cboPesquisaConsulta.IntegralHeight = false;
+            this.cboPesquisaConsulta.ItemHeight = 43;
+            this.cboPesquisaConsulta.Location = new System.Drawing.Point(16, 72);
+            this.cboPesquisaConsulta.MaxDropDownItems = 4;
+            this.cboPesquisaConsulta.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.cboPesquisaConsulta.Name = "cboPesquisaConsulta";
+            this.cboPesquisaConsulta.Size = new System.Drawing.Size(464, 49);
+            this.cboPesquisaConsulta.StartIndex = 0;
+            this.cboPesquisaConsulta.TabIndex = 14;
+            // 
+            // cboPesquisaNomePaciente
+            // 
+            this.cboPesquisaNomePaciente.AutoResize = false;
+            this.cboPesquisaNomePaciente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cboPesquisaNomePaciente.Depth = 0;
+            this.cboPesquisaNomePaciente.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cboPesquisaNomePaciente.DropDownHeight = 174;
+            this.cboPesquisaNomePaciente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPesquisaNomePaciente.DropDownWidth = 121;
+            this.cboPesquisaNomePaciente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            this.cboPesquisaNomePaciente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.cboPesquisaNomePaciente.FormattingEnabled = true;
+            this.cboPesquisaNomePaciente.Hint = "Paciente";
+            this.cboPesquisaNomePaciente.IntegralHeight = false;
+            this.cboPesquisaNomePaciente.ItemHeight = 43;
+            this.cboPesquisaNomePaciente.Location = new System.Drawing.Point(17, 13);
+            this.cboPesquisaNomePaciente.MaxDropDownItems = 4;
+            this.cboPesquisaNomePaciente.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            this.cboPesquisaNomePaciente.Name = "cboPesquisaNomePaciente";
+            this.cboPesquisaNomePaciente.Size = new System.Drawing.Size(464, 49);
+            this.cboPesquisaNomePaciente.StartIndex = 0;
+            this.cboPesquisaNomePaciente.TabIndex = 13;
+            // 
             // CadastroPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -234,8 +323,14 @@
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "CadastroPaciente";
             this.Text = "CadastroPaciente";
-            this.materialTabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            this.tabCadastro.ResumeLayout(false);
+            this.tabPageCadastro.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.tabPageConsulta.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -247,5 +342,9 @@
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtNome;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtObservacao;
         private ReaLTaiizor.Controls.MaterialComboBox cboConvenio;
+        private Panel panel3;
+        private ReaLTaiizor.Controls.MaterialComboBox cboPesquisaConsulta;
+        private ReaLTaiizor.Controls.MaterialComboBox cboPesquisaNomePaciente;
+        private ReaLTaiizor.Controls.MaterialButton btmPesquisar;
     }
 }
