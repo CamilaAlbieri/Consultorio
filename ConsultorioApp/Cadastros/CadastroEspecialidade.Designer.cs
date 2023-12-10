@@ -28,225 +28,258 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtEspecialidade = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btmPesquisar = new ReaLTaiizor.Controls.MaterialButton();
-            this.cmbPesquisaEspecialidade = new ReaLTaiizor.Controls.MaterialComboBox();
-            this.txtEspecialidade1 = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            this.cboEspecialidade = new ReaLTaiizor.Controls.MaterialComboBox();
-            this.btnPesquisar = new ReaLTaiizor.Controls.MaterialButton();
-            this.tabCadastro.SuspendLayout();
-            this.tabPageCadastro.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.tabPageConsulta.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.SuspendLayout();
+            txtEspecialidade = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            panel3 = new Panel();
+            btmPesquisar = new ReaLTaiizor.Controls.MaterialButton();
+            cmbPesquisaEspecialidade = new ReaLTaiizor.Controls.MaterialComboBox();
+            txtEspecialidade1 = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            cboEspecialidade = new ReaLTaiizor.Controls.MaterialComboBox();
+            btnPesquisar = new ReaLTaiizor.Controls.MaterialButton();
+            txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            tabCadastro.SuspendLayout();
+            tabPageCadastro.SuspendLayout();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            tabPageConsulta.SuspendLayout();
+            panel3.SuspendLayout();
+            SuspendLayout();
             // 
             // tabCadastro
             // 
-            this.tabCadastro.Size = new System.Drawing.Size(524, 469);
+            tabCadastro.Size = new Size(524, 469);
             // 
             // tabPageCadastro
             // 
-            this.tabPageCadastro.Controls.Add(this.txtEspecialidade1);
-            this.tabPageCadastro.Size = new System.Drawing.Size(516, 434);
-            this.tabPageCadastro.Controls.SetChildIndex(this.panel1, 0);
-            this.tabPageCadastro.Controls.SetChildIndex(this.txtEspecialidade1, 0);
+            tabPageCadastro.Controls.Add(txtId);
+            tabPageCadastro.Controls.Add(txtEspecialidade1);
+            tabPageCadastro.Size = new Size(516, 434);
+            tabPageCadastro.Controls.SetChildIndex(panel1, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtEspecialidade1, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtId, 0);
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(7, 158);
+            panel1.Location = new Point(7, 158);
             // 
             // tabPageConsulta
             // 
-            this.tabPageConsulta.Controls.Add(this.btnPesquisar);
-            this.tabPageConsulta.Controls.Add(this.cboEspecialidade);
-            this.tabPageConsulta.Size = new System.Drawing.Size(516, 434);
-            this.tabPageConsulta.Controls.SetChildIndex(this.panel2, 0);
-            this.tabPageConsulta.Controls.SetChildIndex(this.cboEspecialidade, 0);
-            this.tabPageConsulta.Controls.SetChildIndex(this.btnPesquisar, 0);
+            tabPageConsulta.Controls.Add(btnPesquisar);
+            tabPageConsulta.Controls.Add(cboEspecialidade);
+            tabPageConsulta.Size = new Size(516, 434);
+            tabPageConsulta.Controls.SetChildIndex(panel2, 0);
+            tabPageConsulta.Controls.SetChildIndex(cboEspecialidade, 0);
+            tabPageConsulta.Controls.SetChildIndex(btnPesquisar, 0);
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(287, 4);
+            btnCancelar.Location = new Point(287, 4);
             // 
             // txtEspecialidade
             // 
-            this.txtEspecialidade.AnimateReadOnly = false;
-            this.txtEspecialidade.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtEspecialidade.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtEspecialidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtEspecialidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtEspecialidade.Depth = 0;
-            this.txtEspecialidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtEspecialidade.HideSelection = true;
-            this.txtEspecialidade.LeadingIcon = null;
-            this.txtEspecialidade.Location = new System.Drawing.Point(0, 0);
-            this.txtEspecialidade.MaxLength = 32767;
-            this.txtEspecialidade.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            this.txtEspecialidade.Name = "txtEspecialidade";
-            this.txtEspecialidade.PasswordChar = '\0';
-            this.txtEspecialidade.PrefixSuffixText = null;
-            this.txtEspecialidade.ReadOnly = false;
-            this.txtEspecialidade.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtEspecialidade.SelectedText = "";
-            this.txtEspecialidade.SelectionLength = 0;
-            this.txtEspecialidade.SelectionStart = 0;
-            this.txtEspecialidade.ShortcutsEnabled = true;
-            this.txtEspecialidade.Size = new System.Drawing.Size(250, 48);
-            this.txtEspecialidade.TabIndex = 0;
-            this.txtEspecialidade.TabStop = false;
-            this.txtEspecialidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtEspecialidade.TrailingIcon = null;
-            this.txtEspecialidade.UseSystemPasswordChar = false;
+            txtEspecialidade.AnimateReadOnly = false;
+            txtEspecialidade.AutoCompleteMode = AutoCompleteMode.None;
+            txtEspecialidade.AutoCompleteSource = AutoCompleteSource.None;
+            txtEspecialidade.BackgroundImageLayout = ImageLayout.None;
+            txtEspecialidade.CharacterCasing = CharacterCasing.Normal;
+            txtEspecialidade.Depth = 0;
+            txtEspecialidade.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtEspecialidade.HideSelection = true;
+            txtEspecialidade.LeadingIcon = null;
+            txtEspecialidade.Location = new Point(0, 0);
+            txtEspecialidade.MaxLength = 32767;
+            txtEspecialidade.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtEspecialidade.Name = "txtEspecialidade";
+            txtEspecialidade.PasswordChar = '\0';
+            txtEspecialidade.PrefixSuffixText = null;
+            txtEspecialidade.ReadOnly = false;
+            txtEspecialidade.RightToLeft = RightToLeft.No;
+            txtEspecialidade.SelectedText = "";
+            txtEspecialidade.SelectionLength = 0;
+            txtEspecialidade.SelectionStart = 0;
+            txtEspecialidade.ShortcutsEnabled = true;
+            txtEspecialidade.Size = new Size(250, 48);
+            txtEspecialidade.TabIndex = 0;
+            txtEspecialidade.TabStop = false;
+            txtEspecialidade.TextAlign = HorizontalAlignment.Left;
+            txtEspecialidade.TrailingIcon = null;
+            txtEspecialidade.UseSystemPasswordChar = false;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btmPesquisar);
-            this.panel3.Controls.Add(this.cmbPesquisaEspecialidade);
-            this.panel3.Location = new System.Drawing.Point(9, 6);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(497, 193);
-            this.panel3.TabIndex = 5;
+            panel3.Controls.Add(btmPesquisar);
+            panel3.Controls.Add(cmbPesquisaEspecialidade);
+            panel3.Location = new Point(9, 6);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(497, 193);
+            panel3.TabIndex = 5;
             // 
             // btmPesquisar
             // 
-            this.btmPesquisar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btmPesquisar.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btmPesquisar.Depth = 0;
-            this.btmPesquisar.HighEmphasis = true;
-            this.btmPesquisar.Icon = null;
-            this.btmPesquisar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.btmPesquisar.Location = new System.Drawing.Point(191, 134);
-            this.btmPesquisar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btmPesquisar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.btmPesquisar.Name = "btmPesquisar";
-            this.btmPesquisar.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btmPesquisar.Size = new System.Drawing.Size(100, 36);
-            this.btmPesquisar.TabIndex = 16;
-            this.btmPesquisar.Text = "Pesquisar";
-            this.btmPesquisar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btmPesquisar.UseAccentColor = false;
-            this.btmPesquisar.UseVisualStyleBackColor = true;
+            btmPesquisar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btmPesquisar.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btmPesquisar.Depth = 0;
+            btmPesquisar.HighEmphasis = true;
+            btmPesquisar.Icon = null;
+            btmPesquisar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            btmPesquisar.Location = new Point(191, 134);
+            btmPesquisar.Margin = new Padding(4, 6, 4, 6);
+            btmPesquisar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            btmPesquisar.Name = "btmPesquisar";
+            btmPesquisar.NoAccentTextColor = Color.Empty;
+            btmPesquisar.Size = new Size(100, 36);
+            btmPesquisar.TabIndex = 16;
+            btmPesquisar.Text = "Pesquisar";
+            btmPesquisar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            btmPesquisar.UseAccentColor = false;
+            btmPesquisar.UseVisualStyleBackColor = true;
             // 
             // cmbPesquisaEspecialidade
             // 
-            this.cmbPesquisaEspecialidade.AutoResize = false;
-            this.cmbPesquisaEspecialidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbPesquisaEspecialidade.Depth = 0;
-            this.cmbPesquisaEspecialidade.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cmbPesquisaEspecialidade.DropDownHeight = 174;
-            this.cmbPesquisaEspecialidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPesquisaEspecialidade.DropDownWidth = 121;
-            this.cmbPesquisaEspecialidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cmbPesquisaEspecialidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cmbPesquisaEspecialidade.FormattingEnabled = true;
-            this.cmbPesquisaEspecialidade.Hint = "Especialidade";
-            this.cmbPesquisaEspecialidade.IntegralHeight = false;
-            this.cmbPesquisaEspecialidade.ItemHeight = 43;
-            this.cmbPesquisaEspecialidade.Location = new System.Drawing.Point(20, 41);
-            this.cmbPesquisaEspecialidade.MaxDropDownItems = 4;
-            this.cmbPesquisaEspecialidade.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            this.cmbPesquisaEspecialidade.Name = "cmbPesquisaEspecialidade";
-            this.cmbPesquisaEspecialidade.Size = new System.Drawing.Size(461, 49);
-            this.cmbPesquisaEspecialidade.StartIndex = 0;
-            this.cmbPesquisaEspecialidade.TabIndex = 2;
+            cmbPesquisaEspecialidade.AutoResize = false;
+            cmbPesquisaEspecialidade.BackColor = Color.FromArgb(255, 255, 255);
+            cmbPesquisaEspecialidade.Depth = 0;
+            cmbPesquisaEspecialidade.DrawMode = DrawMode.OwnerDrawVariable;
+            cmbPesquisaEspecialidade.DropDownHeight = 174;
+            cmbPesquisaEspecialidade.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbPesquisaEspecialidade.DropDownWidth = 121;
+            cmbPesquisaEspecialidade.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cmbPesquisaEspecialidade.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cmbPesquisaEspecialidade.FormattingEnabled = true;
+            cmbPesquisaEspecialidade.Hint = "Especialidade";
+            cmbPesquisaEspecialidade.IntegralHeight = false;
+            cmbPesquisaEspecialidade.ItemHeight = 43;
+            cmbPesquisaEspecialidade.Location = new Point(20, 41);
+            cmbPesquisaEspecialidade.MaxDropDownItems = 4;
+            cmbPesquisaEspecialidade.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            cmbPesquisaEspecialidade.Name = "cmbPesquisaEspecialidade";
+            cmbPesquisaEspecialidade.Size = new Size(461, 49);
+            cmbPesquisaEspecialidade.StartIndex = 0;
+            cmbPesquisaEspecialidade.TabIndex = 2;
             // 
             // txtEspecialidade1
             // 
-            this.txtEspecialidade1.AnimateReadOnly = false;
-            this.txtEspecialidade1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.txtEspecialidade1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.txtEspecialidade1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.txtEspecialidade1.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.txtEspecialidade1.Depth = 0;
-            this.txtEspecialidade1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtEspecialidade1.HideSelection = true;
-            this.txtEspecialidade1.Hint = "Especialidade";
-            this.txtEspecialidade1.LeadingIcon = null;
-            this.txtEspecialidade1.Location = new System.Drawing.Point(7, 44);
-            this.txtEspecialidade1.MaxLength = 32767;
-            this.txtEspecialidade1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            this.txtEspecialidade1.Name = "txtEspecialidade1";
-            this.txtEspecialidade1.PasswordChar = '\0';
-            this.txtEspecialidade1.PrefixSuffixText = null;
-            this.txtEspecialidade1.ReadOnly = false;
-            this.txtEspecialidade1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtEspecialidade1.SelectedText = "";
-            this.txtEspecialidade1.SelectionLength = 0;
-            this.txtEspecialidade1.SelectionStart = 0;
-            this.txtEspecialidade1.ShortcutsEnabled = true;
-            this.txtEspecialidade1.Size = new System.Drawing.Size(503, 48);
-            this.txtEspecialidade1.TabIndex = 1;
-            this.txtEspecialidade1.TabStop = false;
-            this.txtEspecialidade1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtEspecialidade1.TrailingIcon = null;
-            this.txtEspecialidade1.UseSystemPasswordChar = false;
+            txtEspecialidade1.AnimateReadOnly = false;
+            txtEspecialidade1.AutoCompleteMode = AutoCompleteMode.None;
+            txtEspecialidade1.AutoCompleteSource = AutoCompleteSource.None;
+            txtEspecialidade1.BackgroundImageLayout = ImageLayout.None;
+            txtEspecialidade1.CharacterCasing = CharacterCasing.Normal;
+            txtEspecialidade1.Depth = 0;
+            txtEspecialidade1.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtEspecialidade1.HideSelection = true;
+            txtEspecialidade1.Hint = "Especialidade";
+            txtEspecialidade1.LeadingIcon = null;
+            txtEspecialidade1.Location = new Point(7, 44);
+            txtEspecialidade1.MaxLength = 32767;
+            txtEspecialidade1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtEspecialidade1.Name = "txtEspecialidade1";
+            txtEspecialidade1.PasswordChar = '\0';
+            txtEspecialidade1.PrefixSuffixText = null;
+            txtEspecialidade1.ReadOnly = false;
+            txtEspecialidade1.RightToLeft = RightToLeft.No;
+            txtEspecialidade1.SelectedText = "";
+            txtEspecialidade1.SelectionLength = 0;
+            txtEspecialidade1.SelectionStart = 0;
+            txtEspecialidade1.ShortcutsEnabled = true;
+            txtEspecialidade1.Size = new Size(449, 48);
+            txtEspecialidade1.TabIndex = 1;
+            txtEspecialidade1.TabStop = false;
+            txtEspecialidade1.TextAlign = HorizontalAlignment.Left;
+            txtEspecialidade1.TrailingIcon = null;
+            txtEspecialidade1.UseSystemPasswordChar = false;
             // 
             // cboEspecialidade
             // 
-            this.cboEspecialidade.AutoResize = false;
-            this.cboEspecialidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cboEspecialidade.Depth = 0;
-            this.cboEspecialidade.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.cboEspecialidade.DropDownHeight = 174;
-            this.cboEspecialidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboEspecialidade.DropDownWidth = 121;
-            this.cboEspecialidade.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.cboEspecialidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.cboEspecialidade.FormattingEnabled = true;
-            this.cboEspecialidade.Hint = "Especialidade";
-            this.cboEspecialidade.IntegralHeight = false;
-            this.cboEspecialidade.ItemHeight = 43;
-            this.cboEspecialidade.Location = new System.Drawing.Point(9, 34);
-            this.cboEspecialidade.MaxDropDownItems = 4;
-            this.cboEspecialidade.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            this.cboEspecialidade.Name = "cboEspecialidade";
-            this.cboEspecialidade.Size = new System.Drawing.Size(497, 49);
-            this.cboEspecialidade.StartIndex = 0;
-            this.cboEspecialidade.TabIndex = 6;
+            cboEspecialidade.AutoResize = false;
+            cboEspecialidade.BackColor = Color.FromArgb(255, 255, 255);
+            cboEspecialidade.Depth = 0;
+            cboEspecialidade.DrawMode = DrawMode.OwnerDrawVariable;
+            cboEspecialidade.DropDownHeight = 174;
+            cboEspecialidade.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboEspecialidade.DropDownWidth = 121;
+            cboEspecialidade.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboEspecialidade.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboEspecialidade.FormattingEnabled = true;
+            cboEspecialidade.Hint = "Especialidade";
+            cboEspecialidade.IntegralHeight = false;
+            cboEspecialidade.ItemHeight = 43;
+            cboEspecialidade.Location = new Point(9, 34);
+            cboEspecialidade.MaxDropDownItems = 4;
+            cboEspecialidade.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            cboEspecialidade.Name = "cboEspecialidade";
+            cboEspecialidade.Size = new Size(497, 49);
+            cboEspecialidade.StartIndex = 0;
+            cboEspecialidade.TabIndex = 6;
             // 
             // btnPesquisar
             // 
-            this.btnPesquisar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnPesquisar.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnPesquisar.Depth = 0;
-            this.btnPesquisar.HighEmphasis = true;
-            this.btnPesquisar.Icon = null;
-            this.btnPesquisar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            this.btnPesquisar.Location = new System.Drawing.Point(181, 114);
-            this.btnPesquisar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnPesquisar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnPesquisar.Size = new System.Drawing.Size(158, 36);
-            this.btnPesquisar.TabIndex = 7;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnPesquisar.UseAccentColor = false;
-            this.btnPesquisar.UseVisualStyleBackColor = true;
+            btnPesquisar.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            btnPesquisar.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
+            btnPesquisar.Depth = 0;
+            btnPesquisar.HighEmphasis = true;
+            btnPesquisar.Icon = null;
+            btnPesquisar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
+            btnPesquisar.Location = new Point(181, 114);
+            btnPesquisar.Margin = new Padding(4, 6, 4, 6);
+            btnPesquisar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            btnPesquisar.Name = "btnPesquisar";
+            btnPesquisar.NoAccentTextColor = Color.Empty;
+            btnPesquisar.Size = new Size(100, 36);
+            btnPesquisar.TabIndex = 7;
+            btnPesquisar.Text = "Pesquisar";
+            btnPesquisar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
+            btnPesquisar.UseAccentColor = false;
+            btnPesquisar.UseVisualStyleBackColor = true;
+            // 
+            // txtId
+            // 
+            txtId.AnimateReadOnly = false;
+            txtId.AutoCompleteMode = AutoCompleteMode.None;
+            txtId.AutoCompleteSource = AutoCompleteSource.None;
+            txtId.BackgroundImageLayout = ImageLayout.None;
+            txtId.CharacterCasing = CharacterCasing.Normal;
+            txtId.Depth = 0;
+            txtId.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtId.HideSelection = true;
+            txtId.Hint = "Id";
+            txtId.LeadingIcon = null;
+            txtId.Location = new Point(462, 44);
+            txtId.MaxLength = 32767;
+            txtId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtId.Name = "txtId";
+            txtId.PasswordChar = '\0';
+            txtId.PrefixSuffixText = null;
+            txtId.ReadOnly = true;
+            txtId.RightToLeft = RightToLeft.No;
+            txtId.SelectedText = "";
+            txtId.SelectionLength = 0;
+            txtId.SelectionStart = 0;
+            txtId.ShortcutsEnabled = true;
+            txtId.Size = new Size(42, 48);
+            txtId.TabIndex = 12;
+            txtId.TabStop = false;
+            txtId.TextAlign = HorizontalAlignment.Left;
+            txtId.TrailingIcon = null;
+            txtId.UseSystemPasswordChar = false;
             // 
             // CadastroEspecialidade
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 545);
-            this.Location = new System.Drawing.Point(0, 0);
-            this.Name = "CadastroEspecialidade";
-            this.Text = "CadastroEspecialidade";
-            this.tabCadastro.ResumeLayout(false);
-            this.tabPageCadastro.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.tabPageConsulta.ResumeLayout(false);
-            this.tabPageConsulta.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(546, 545);
+            Location = new Point(0, 0);
+            Name = "CadastroEspecialidade";
+            Text = "CadastroEspecialidade";
+            tabCadastro.ResumeLayout(false);
+            tabPageCadastro.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            tabPageConsulta.ResumeLayout(false);
+            tabPageConsulta.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -258,5 +291,6 @@
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtEspecialidade1;
         private ReaLTaiizor.Controls.MaterialComboBox cboEspecialidade;
         private ReaLTaiizor.Controls.MaterialButton btnPesquisar;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
     }
 }

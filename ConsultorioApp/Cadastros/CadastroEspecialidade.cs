@@ -17,7 +17,7 @@ namespace Consultorio.App.Cadastros
 
         public CadastroEspecialidade(IBaseService<Especialidade> especialidadeService)
         {
-           _especialidadeService = especialidadeService;
+            _especialidadeService = especialidadeService;
             InitializeComponent();
             CarregaCombo();
         }
@@ -25,7 +25,7 @@ namespace Consultorio.App.Cadastros
         private void CarregaCombo()
         {
             var especialidades = _especialidadeService.Get<EspecialidadeModel>().ToList();
-            
+
             cboEspecialidade.ValueMember = "Id";
             cboEspecialidade.DisplayMember = "Nome";
             cboEspecialidade.DataSource = especialidades;
@@ -48,26 +48,48 @@ namespace Consultorio.App.Cadastros
 
                     Utils.Utils.messageBoxOk("Especialidade inserida com sucesso!", "Especialidade");
                     LimpaCampos();
-                } else
+                }
+                else
                 {
 
                     Utils.Utils.messageExclamation("Não pode inserir uma especialidade com o mesmo nome!", "Especialidade");
                 }
-            
-                
+
+
 
 
             }
 
         }
 
+        protected override void Deletar(int id)
+        {
+            try
+            {
+                _especialidadeService.Delete(id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, @"Consultório", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         protected override void CarregaGrid()
         {
-            
+            especialidades = _especialidadeService.Get<Especialidade>().ToList();
+
+            dataGridViewConsulta.DataSource = especialidades;
+            dataGridViewConsulta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
 
         }
 
+        protected override void CarregaRegistro(DataGridViewRow? linha)
+        {
+            txtId.Text = linha?.Cells["Id"].Value.ToString();
+            txtEspecialidade1.Text = linha?.Cells["Nome"].Value.ToString();
+  
+        }
 
     }
 }

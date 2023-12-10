@@ -22,7 +22,7 @@ namespace ConsultorioApp
             }
         }
 
-        private void  dentistaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void dentistaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Exibeformulario<CadastroDentista>();
         }
@@ -66,6 +66,6 @@ namespace ConsultorioApp
             }
         }
 
-        
+
     }
 }

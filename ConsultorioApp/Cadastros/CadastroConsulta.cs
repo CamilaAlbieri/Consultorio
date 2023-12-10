@@ -11,6 +11,6 @@ namespace Consultorio.App.Cadastros
             InitializeComponent();
         }
 
-        
+
     }
 }
