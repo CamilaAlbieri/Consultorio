@@ -49,7 +49,6 @@ namespace Consultorio.App.Cadastros
 
                     Utils.Utils.messageBoxOk("Especialidade atualizada com sucesso!", "Especialidade");
                     LimpaCampos();
-                    IsAlteracao = false;
 
                     tabCadastro.SelectedIndex = 1;
                 }

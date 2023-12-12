@@ -159,14 +159,14 @@ namespace Consultorio.App.Base
             else
             {
 
-                var convenio = (ConvenioModel) cboPesquisaConvenio.SelectedItem;
+                var convenio = (ConvenioModel)cboPesquisaConvenio.SelectedItem;
 
                 var pacientes = _pacienteService.Get<PacienteModel>(new List<String>() { "Convenio" }).Where(x => x.idConvenio == convenio.Id)
                     .ToList();
 
 
                 dataGridViewConsulta.DataSource = pacientes;
-               //dataGridViewConsulta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                //dataGridViewConsulta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 dataGridViewConsulta.Columns["IdConvenio"]!.Visible = false;
             }
         }

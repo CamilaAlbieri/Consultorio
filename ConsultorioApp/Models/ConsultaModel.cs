@@ -10,13 +10,13 @@ namespace ConsultorioApp.Models
 
         public int idPaciente {get; set;}
         
-        public String nomeDentista { get; set; }
+        public String? nomeDentista { get; set; }
 
-        public String nomePaciente { get; set; }
+        public String? nomePaciente { get; set; }
 
         public float? Valor { get; set; }
         public DateTime? Data { get; set; }
-        public string? Descricao { get; set; }
+        public String? Descricao { get; set; }
     }
 
 

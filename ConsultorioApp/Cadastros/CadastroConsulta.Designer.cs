@@ -29,17 +29,19 @@
         private void InitializeComponent()
         {
             cboNomePaciente = new ReaLTaiizor.Controls.MaterialComboBox();
-            cmbNomeDentista = new ReaLTaiizor.Controls.MaterialComboBox();
-            txtValorCnsulta = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            cboNomeDentista = new ReaLTaiizor.Controls.MaterialComboBox();
+            txtValorConsulta = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtDataConsulta = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             txtDescricao = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             panel3 = new Panel();
+            chkTodos = new CheckBox();
             btmPesquisar = new ReaLTaiizor.Controls.MaterialButton();
-            txtPesquisaNomePaciente = new ReaLTaiizor.Controls.MaterialComboBox();
-            txtPesquisaNomeDentista = new ReaLTaiizor.Controls.MaterialComboBox();
+            cboPesquisaNomePaciente = new ReaLTaiizor.Controls.MaterialComboBox();
+            cboPesquisaNomeDentista = new ReaLTaiizor.Controls.MaterialComboBox();
             txtDataFim = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             txtDataInicio = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
+            label1 = new Label();
             tabCadastro.SuspendLayout();
             tabPageCadastro.SuspendLayout();
             panel1.SuspendLayout();
@@ -52,24 +54,26 @@
             // 
             tabCadastro.Dock = DockStyle.Fill;
             tabCadastro.Location = new Point(3, 64);
-            tabCadastro.Size = new Size(544, 475);
+            tabCadastro.Size = new Size(544, 471);
             // 
             // tabPageCadastro
             // 
+            tabPageCadastro.Controls.Add(label1);
             tabPageCadastro.Controls.Add(txtId);
             tabPageCadastro.Controls.Add(txtDescricao);
             tabPageCadastro.Controls.Add(txtDataConsulta);
-            tabPageCadastro.Controls.Add(txtValorCnsulta);
-            tabPageCadastro.Controls.Add(cmbNomeDentista);
+            tabPageCadastro.Controls.Add(txtValorConsulta);
+            tabPageCadastro.Controls.Add(cboNomeDentista);
             tabPageCadastro.Controls.Add(cboNomePaciente);
-            tabPageCadastro.Size = new Size(536, 440);
+            tabPageCadastro.Size = new Size(536, 436);
             tabPageCadastro.Controls.SetChildIndex(panel1, 0);
             tabPageCadastro.Controls.SetChildIndex(cboNomePaciente, 0);
-            tabPageCadastro.Controls.SetChildIndex(cmbNomeDentista, 0);
-            tabPageCadastro.Controls.SetChildIndex(txtValorCnsulta, 0);
+            tabPageCadastro.Controls.SetChildIndex(cboNomeDentista, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtValorConsulta, 0);
             tabPageCadastro.Controls.SetChildIndex(txtDataConsulta, 0);
             tabPageCadastro.Controls.SetChildIndex(txtDescricao, 0);
             tabPageCadastro.Controls.SetChildIndex(txtId, 0);
+            tabPageCadastro.Controls.SetChildIndex(label1, 0);
             // 
             // panel1
             // 
@@ -78,11 +82,13 @@
             // 
             // panel2
             // 
-            panel2.Size = new Size(501, 155);
+            panel2.Location = new Point(3, 368);
+            panel2.Size = new Size(527, 65);
             // 
             // tabPageConsulta
             // 
             tabPageConsulta.Controls.Add(panel3);
+            tabPageConsulta.Size = new Size(536, 436);
             tabPageConsulta.Controls.SetChildIndex(panel2, 0);
             tabPageConsulta.Controls.SetChildIndex(panel3, 0);
             // 
@@ -117,60 +123,60 @@
             cboNomePaciente.StartIndex = 0;
             cboNomePaciente.TabIndex = 5;
             // 
-            // cmbNomeDentista
+            // cboNomeDentista
             // 
-            cmbNomeDentista.AutoResize = false;
-            cmbNomeDentista.BackColor = Color.FromArgb(255, 255, 255);
-            cmbNomeDentista.Depth = 0;
-            cmbNomeDentista.DrawMode = DrawMode.OwnerDrawVariable;
-            cmbNomeDentista.DropDownHeight = 174;
-            cmbNomeDentista.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbNomeDentista.DropDownWidth = 121;
-            cmbNomeDentista.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            cmbNomeDentista.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            cmbNomeDentista.FormattingEnabled = true;
-            cmbNomeDentista.Hint = "Dentista";
-            cmbNomeDentista.IntegralHeight = false;
-            cmbNomeDentista.ItemHeight = 43;
-            cmbNomeDentista.Location = new Point(15, 19);
-            cmbNomeDentista.MaxDropDownItems = 4;
-            cmbNomeDentista.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            cmbNomeDentista.Name = "cmbNomeDentista";
-            cmbNomeDentista.Size = new Size(427, 49);
-            cmbNomeDentista.StartIndex = 0;
-            cmbNomeDentista.TabIndex = 6;
+            cboNomeDentista.AutoResize = false;
+            cboNomeDentista.BackColor = Color.FromArgb(255, 255, 255);
+            cboNomeDentista.Depth = 0;
+            cboNomeDentista.DrawMode = DrawMode.OwnerDrawVariable;
+            cboNomeDentista.DropDownHeight = 174;
+            cboNomeDentista.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboNomeDentista.DropDownWidth = 121;
+            cboNomeDentista.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboNomeDentista.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboNomeDentista.FormattingEnabled = true;
+            cboNomeDentista.Hint = "Dentista";
+            cboNomeDentista.IntegralHeight = false;
+            cboNomeDentista.ItemHeight = 43;
+            cboNomeDentista.Location = new Point(15, 19);
+            cboNomeDentista.MaxDropDownItems = 4;
+            cboNomeDentista.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            cboNomeDentista.Name = "cboNomeDentista";
+            cboNomeDentista.Size = new Size(422, 49);
+            cboNomeDentista.StartIndex = 0;
+            cboNomeDentista.TabIndex = 6;
             // 
-            // txtValorCnsulta
+            // txtValorConsulta
             // 
-            txtValorCnsulta.AnimateReadOnly = false;
-            txtValorCnsulta.AutoCompleteMode = AutoCompleteMode.None;
-            txtValorCnsulta.AutoCompleteSource = AutoCompleteSource.None;
-            txtValorCnsulta.BackgroundImageLayout = ImageLayout.None;
-            txtValorCnsulta.CharacterCasing = CharacterCasing.Normal;
-            txtValorCnsulta.Depth = 0;
-            txtValorCnsulta.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtValorCnsulta.HideSelection = true;
-            txtValorCnsulta.Hint = "Valor Consulta";
-            txtValorCnsulta.LeadingIcon = null;
-            txtValorCnsulta.Location = new Point(15, 129);
-            txtValorCnsulta.MaxLength = 32767;
-            txtValorCnsulta.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtValorCnsulta.Name = "txtValorCnsulta";
-            txtValorCnsulta.PasswordChar = '\0';
-            txtValorCnsulta.PrefixSuffixText = null;
-            txtValorCnsulta.ReadOnly = false;
-            txtValorCnsulta.RightToLeft = RightToLeft.No;
-            txtValorCnsulta.SelectedText = "";
-            txtValorCnsulta.SelectionLength = 0;
-            txtValorCnsulta.SelectionStart = 0;
-            txtValorCnsulta.ShortcutsEnabled = true;
-            txtValorCnsulta.Size = new Size(347, 48);
-            txtValorCnsulta.TabIndex = 7;
-            txtValorCnsulta.TabStop = false;
-            txtValorCnsulta.Text = "R$";
-            txtValorCnsulta.TextAlign = HorizontalAlignment.Left;
-            txtValorCnsulta.TrailingIcon = null;
-            txtValorCnsulta.UseSystemPasswordChar = false;
+            txtValorConsulta.AnimateReadOnly = false;
+            txtValorConsulta.AutoCompleteMode = AutoCompleteMode.None;
+            txtValorConsulta.AutoCompleteSource = AutoCompleteSource.None;
+            txtValorConsulta.BackgroundImageLayout = ImageLayout.None;
+            txtValorConsulta.CharacterCasing = CharacterCasing.Normal;
+            txtValorConsulta.Depth = 0;
+            txtValorConsulta.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
+            txtValorConsulta.HideSelection = true;
+            txtValorConsulta.Hint = "Valor Consulta";
+            txtValorConsulta.LeadingIcon = null;
+            txtValorConsulta.Location = new Point(56, 129);
+            txtValorConsulta.MaxLength = 32767;
+            txtValorConsulta.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtValorConsulta.Name = "txtValorConsulta";
+            txtValorConsulta.PasswordChar = '\0';
+            txtValorConsulta.PrefixSuffixText = null;
+            txtValorConsulta.ReadOnly = false;
+            txtValorConsulta.RightToLeft = RightToLeft.No;
+            txtValorConsulta.SelectedText = "";
+            txtValorConsulta.SelectionLength = 0;
+            txtValorConsulta.SelectionStart = 0;
+            txtValorConsulta.ShortcutsEnabled = true;
+            txtValorConsulta.Size = new Size(289, 48);
+            txtValorConsulta.TabIndex = 7;
+            txtValorConsulta.TabStop = false;
+            txtValorConsulta.Tag = "";
+            txtValorConsulta.TextAlign = HorizontalAlignment.Left;
+            txtValorConsulta.TrailingIcon = null;
+            txtValorConsulta.UseSystemPasswordChar = false;
             // 
             // txtDataConsulta
             // 
@@ -187,7 +193,7 @@
             txtDataConsulta.Hint = "Data Consulta";
             txtDataConsulta.InsertKeyMode = InsertKeyMode.Default;
             txtDataConsulta.LeadingIcon = null;
-            txtDataConsulta.Location = new Point(372, 129);
+            txtDataConsulta.Location = new Point(351, 129);
             txtDataConsulta.Mask = "99/99/9999";
             txtDataConsulta.MaxLength = 32767;
             txtDataConsulta.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -204,7 +210,7 @@
             txtDataConsulta.SelectionLength = 0;
             txtDataConsulta.SelectionStart = 0;
             txtDataConsulta.ShortcutsEnabled = true;
-            txtDataConsulta.Size = new Size(120, 48);
+            txtDataConsulta.Size = new Size(141, 48);
             txtDataConsulta.SkipLiterals = true;
             txtDataConsulta.TabIndex = 8;
             txtDataConsulta.TabStop = false;
@@ -248,15 +254,26 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(chkTodos);
             panel3.Controls.Add(btmPesquisar);
-            panel3.Controls.Add(txtPesquisaNomePaciente);
-            panel3.Controls.Add(txtPesquisaNomeDentista);
+            panel3.Controls.Add(cboPesquisaNomePaciente);
+            panel3.Controls.Add(cboPesquisaNomeDentista);
             panel3.Controls.Add(txtDataFim);
             panel3.Controls.Add(txtDataInicio);
             panel3.Location = new Point(9, 6);
             panel3.Name = "panel3";
-            panel3.Size = new Size(497, 193);
+            panel3.Size = new Size(507, 179);
             panel3.TabIndex = 5;
+            // 
+            // chkTodos
+            // 
+            chkTodos.AutoSize = true;
+            chkTodos.Location = new Point(11, 148);
+            chkTodos.Name = "chkTodos";
+            chkTodos.Size = new Size(179, 19);
+            chkTodos.TabIndex = 14;
+            chkTodos.Text = "Selecionar todas as consultas";
+            chkTodos.UseVisualStyleBackColor = true;
             // 
             // btmPesquisar
             // 
@@ -266,7 +283,7 @@
             btmPesquisar.HighEmphasis = true;
             btmPesquisar.Icon = null;
             btmPesquisar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btmPesquisar.Location = new Point(193, 138);
+            btmPesquisar.Location = new Point(192, 138);
             btmPesquisar.Margin = new Padding(4, 6, 4, 6);
             btmPesquisar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btmPesquisar.Name = "btmPesquisar";
@@ -278,51 +295,51 @@
             btmPesquisar.UseAccentColor = false;
             btmPesquisar.UseVisualStyleBackColor = true;
             // 
-            // txtPesquisaNomePaciente
+            // cboPesquisaNomePaciente
             // 
-            txtPesquisaNomePaciente.AutoResize = false;
-            txtPesquisaNomePaciente.BackColor = Color.FromArgb(255, 255, 255);
-            txtPesquisaNomePaciente.Depth = 0;
-            txtPesquisaNomePaciente.DrawMode = DrawMode.OwnerDrawVariable;
-            txtPesquisaNomePaciente.DropDownHeight = 174;
-            txtPesquisaNomePaciente.DropDownStyle = ComboBoxStyle.DropDownList;
-            txtPesquisaNomePaciente.DropDownWidth = 121;
-            txtPesquisaNomePaciente.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            txtPesquisaNomePaciente.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            txtPesquisaNomePaciente.FormattingEnabled = true;
-            txtPesquisaNomePaciente.Hint = "Paciente";
-            txtPesquisaNomePaciente.IntegralHeight = false;
-            txtPesquisaNomePaciente.ItemHeight = 43;
-            txtPesquisaNomePaciente.Location = new Point(11, 80);
-            txtPesquisaNomePaciente.MaxDropDownItems = 4;
-            txtPesquisaNomePaciente.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtPesquisaNomePaciente.Name = "txtPesquisaNomePaciente";
-            txtPesquisaNomePaciente.Size = new Size(477, 49);
-            txtPesquisaNomePaciente.StartIndex = 0;
-            txtPesquisaNomePaciente.TabIndex = 12;
+            cboPesquisaNomePaciente.AutoResize = false;
+            cboPesquisaNomePaciente.BackColor = Color.FromArgb(255, 255, 255);
+            cboPesquisaNomePaciente.Depth = 0;
+            cboPesquisaNomePaciente.DrawMode = DrawMode.OwnerDrawVariable;
+            cboPesquisaNomePaciente.DropDownHeight = 174;
+            cboPesquisaNomePaciente.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboPesquisaNomePaciente.DropDownWidth = 121;
+            cboPesquisaNomePaciente.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboPesquisaNomePaciente.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboPesquisaNomePaciente.FormattingEnabled = true;
+            cboPesquisaNomePaciente.Hint = "Paciente";
+            cboPesquisaNomePaciente.IntegralHeight = false;
+            cboPesquisaNomePaciente.ItemHeight = 43;
+            cboPesquisaNomePaciente.Location = new Point(11, 80);
+            cboPesquisaNomePaciente.MaxDropDownItems = 4;
+            cboPesquisaNomePaciente.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            cboPesquisaNomePaciente.Name = "cboPesquisaNomePaciente";
+            cboPesquisaNomePaciente.Size = new Size(477, 49);
+            cboPesquisaNomePaciente.StartIndex = 0;
+            cboPesquisaNomePaciente.TabIndex = 12;
             // 
-            // txtPesquisaNomeDentista
+            // cboPesquisaNomeDentista
             // 
-            txtPesquisaNomeDentista.AutoResize = false;
-            txtPesquisaNomeDentista.BackColor = Color.FromArgb(255, 255, 255);
-            txtPesquisaNomeDentista.Depth = 0;
-            txtPesquisaNomeDentista.DrawMode = DrawMode.OwnerDrawVariable;
-            txtPesquisaNomeDentista.DropDownHeight = 174;
-            txtPesquisaNomeDentista.DropDownStyle = ComboBoxStyle.DropDownList;
-            txtPesquisaNomeDentista.DropDownWidth = 121;
-            txtPesquisaNomeDentista.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            txtPesquisaNomeDentista.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            txtPesquisaNomeDentista.FormattingEnabled = true;
-            txtPesquisaNomeDentista.Hint = "Dentista";
-            txtPesquisaNomeDentista.IntegralHeight = false;
-            txtPesquisaNomeDentista.ItemHeight = 43;
-            txtPesquisaNomeDentista.Location = new Point(217, 15);
-            txtPesquisaNomeDentista.MaxDropDownItems = 4;
-            txtPesquisaNomeDentista.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtPesquisaNomeDentista.Name = "txtPesquisaNomeDentista";
-            txtPesquisaNomeDentista.Size = new Size(272, 49);
-            txtPesquisaNomeDentista.StartIndex = 0;
-            txtPesquisaNomeDentista.TabIndex = 11;
+            cboPesquisaNomeDentista.AutoResize = false;
+            cboPesquisaNomeDentista.BackColor = Color.FromArgb(255, 255, 255);
+            cboPesquisaNomeDentista.Depth = 0;
+            cboPesquisaNomeDentista.DrawMode = DrawMode.OwnerDrawVariable;
+            cboPesquisaNomeDentista.DropDownHeight = 174;
+            cboPesquisaNomeDentista.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboPesquisaNomeDentista.DropDownWidth = 121;
+            cboPesquisaNomeDentista.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboPesquisaNomeDentista.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboPesquisaNomeDentista.FormattingEnabled = true;
+            cboPesquisaNomeDentista.Hint = "Dentista";
+            cboPesquisaNomeDentista.IntegralHeight = false;
+            cboPesquisaNomeDentista.ItemHeight = 43;
+            cboPesquisaNomeDentista.Location = new Point(217, 15);
+            cboPesquisaNomeDentista.MaxDropDownItems = 4;
+            cboPesquisaNomeDentista.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            cboPesquisaNomeDentista.Name = "cboPesquisaNomeDentista";
+            cboPesquisaNomeDentista.Size = new Size(272, 49);
+            cboPesquisaNomeDentista.StartIndex = 0;
+            cboPesquisaNomeDentista.TabIndex = 11;
             // 
             // txtDataFim
             // 
@@ -422,7 +439,7 @@
             txtId.HideSelection = true;
             txtId.Hint = "Id";
             txtId.LeadingIcon = null;
-            txtId.Location = new Point(448, 19);
+            txtId.Location = new Point(443, 19);
             txtId.MaxLength = 32767;
             txtId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtId.Name = "txtId";
@@ -434,23 +451,35 @@
             txtId.SelectionLength = 0;
             txtId.SelectionStart = 0;
             txtId.ShortcutsEnabled = true;
-            txtId.Size = new Size(42, 48);
+            txtId.Size = new Size(47, 48);
             txtId.TabIndex = 10;
             txtId.TabStop = false;
             txtId.TextAlign = HorizontalAlignment.Left;
             txtId.TrailingIcon = null;
             txtId.UseSystemPasswordChar = false;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ControlDark;
+            label1.Location = new Point(15, 139);
+            label1.Name = "label1";
+            label1.Size = new Size(35, 28);
+            label1.TabIndex = 11;
+            label1.Text = "R$";
+            // 
             // CadastroConsulta
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(550, 542);
+            ClientSize = new Size(550, 538);
             Location = new Point(0, 0);
             Name = "CadastroConsulta";
             Text = "CadastroConsulta";
             tabCadastro.ResumeLayout(false);
             tabPageCadastro.ResumeLayout(false);
+            tabPageCadastro.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -463,17 +492,19 @@
 
         #endregion
 
-        private ReaLTaiizor.Controls.MaterialComboBox cmbNomeDentista;
+        private ReaLTaiizor.Controls.MaterialComboBox cboNomeDentista;
         private ReaLTaiizor.Controls.MaterialComboBox cboNomePaciente;
-        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtValorCnsulta;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtValorConsulta;
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDataConsulta;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtDescricao;
         private Panel panel3;
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDataInicio;
-        private ReaLTaiizor.Controls.MaterialComboBox txtPesquisaNomePaciente;
-        private ReaLTaiizor.Controls.MaterialComboBox txtPesquisaNomeDentista;
+        private ReaLTaiizor.Controls.MaterialComboBox cboPesquisaNomePaciente;
+        private ReaLTaiizor.Controls.MaterialComboBox cboPesquisaNomeDentista;
         private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDataFim;
         private ReaLTaiizor.Controls.MaterialButton btmPesquisar;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
+        private Label label1;
+        private CheckBox chkTodos;
     }
 }
