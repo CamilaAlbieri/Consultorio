@@ -20,7 +20,7 @@ namespace Consultorio.App.Cadastros
         {
             _convenioService = convenioService;
             InitializeComponent();
-            CarregaCombo();
+            //CarregaCombo();
         }
 
         private void CarregaCombo()
@@ -44,28 +44,41 @@ namespace Consultorio.App.Cadastros
             {
                 try
                 {
-                    if (IsAlteracao)
+                    var convExiste = _convenioService.Get<Convenio>().Where(x => x.Nome == txtConvenio.Text).FirstOrDefault();
+
+                    if (convExiste == null)
                     {
-                        if (int.TryParse(txtId.Text, out var id))
+                        if (IsAlteracao)
                         {
-                            var convenio = _convenioService.GetById<Convenio>(id);
-                            PreencheObjeto(convenio);
-                            _convenioService.Update<Convenio, Convenio, ConvenioValidator>(convenio);
+                            if (int.TryParse(txtId.Text, out var id))
+                            {
+                                var convenio = _convenioService.GetById<Convenio>(id);
+                                PreencheObjeto(convenio);
+                                _convenioService.Update<Convenio, Convenio, ConvenioValidator>(convenio);
+                            }
                         }
+                        else
+                        {
+                            var convenio = new Convenio();
+                            PreencheObjeto(convenio);
+                            _convenioService.Add<Convenio, Convenio, ConvenioValidator>(convenio);
+                        }
+
+                        tabCadastro.SelectedIndex = 1;
+
                     }
                     else
                     {
-                        var convenio = new Convenio();
-                        PreencheObjeto(convenio);
-                        _convenioService.Add<Convenio, Convenio, ConvenioValidator>(convenio);
+                        Utils.Utils.messageExclamation("Não pode inserir um convênio com o mesmo nome!", "Convênio");
                     }
 
-                    tabCadastro.SelectedIndex = 1;
+
+
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message, @"Consultório", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }            
+                }
 
 
             }
@@ -86,17 +99,18 @@ namespace Consultorio.App.Cadastros
 
         protected override void CarregaGrid()
         {
-            convenios = _convenioService.Get<Convenio>(new[] { "Convênio" }).ToList();
+            CarregaCombo();
+            convenios = _convenioService.Get<Convenio>().ToList();
             dataGridViewConsulta.DataSource = convenios;
             dataGridViewConsulta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewConsulta.Columns["IdConvenio"]!.Visible = false;
+            dataGridViewConsulta.Columns["Id"]!.Visible = false;
         }
 
         protected override void CarregaRegistro(DataGridViewRow? linha)
         {
             txtId.Text = linha?.Cells["Id"].Value.ToString();
             txtConvenio.Text = linha?.Cells["Nome"].Value.ToString();
-            
+
         }
     }
 }

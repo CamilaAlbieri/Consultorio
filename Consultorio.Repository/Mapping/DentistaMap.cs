@@ -19,13 +19,14 @@ namespace Consultorio.Repository.Mapping
 
             builder.Property(prop => prop.Telefone)
                 .IsRequired()
-                .HasColumnType("varchar(11)");
+                .HasColumnType("varchar(14)");
 
             builder.Property(prop => prop.CPF)
                 .IsRequired()
-                .HasColumnType("varchar(11)");
+                .HasColumnType("varchar(14)");
 
-            builder.HasMany(prop => prop.Especialidades);
+            builder.HasMany(prop => prop.Especialidades)
+                .WithOne(prop => prop.Dentista);
             
         }
 
@@ -37,7 +38,8 @@ namespace Consultorio.Repository.Mapping
 
                 builder.HasKey(prop => prop.Id);
 
-                builder.HasOne(prop => prop.Dentista);
+                builder.HasOne(prop => prop.Dentista)
+                        .WithMany(prop => prop.Especialidades);
 
                 builder.HasOne(prop => prop.Especialidade);
             }

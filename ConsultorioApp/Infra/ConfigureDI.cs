@@ -46,6 +46,7 @@ namespace Consultorio.App.Infra
             Services.AddScoped<IBaseRepository<Dentista>, BaseRepository<Dentista>>();
             Services.AddScoped<IBaseRepository<Especialidade>, BaseRepository<Especialidade>>();
             Services.AddScoped<IBaseRepository<Paciente>, BaseRepository<Paciente>>();
+            Services.AddScoped<IBaseRepository<DentistaEspecialidade>, BaseRepository<DentistaEspecialidade>>();
 
 
 
@@ -57,6 +58,7 @@ namespace Consultorio.App.Infra
             Services.AddScoped<IBaseService<Dentista>, BaseService<Dentista>>();
             Services.AddScoped<IBaseService<Especialidade>, BaseService<Especialidade>>();
             Services.AddScoped<IBaseService<Paciente>, BaseService<Paciente>>();
+            Services.AddScoped<IBaseService<DentistaEspecialidade>, BaseService<DentistaEspecialidade>>();
 
 
             // Formulários
@@ -81,8 +83,10 @@ namespace Consultorio.App.Infra
                     .ForMember(d => d.idPaciente, d => d.MapFrom(x => $"{x.Paciente!.Id}"))
                     .ForMember(d => d.nomePaciente, d => d.MapFrom(x => $"{x.Paciente!.Nome}"));
 
-                config.CreateMap<DentistaEspecialidade, DentistaModel>()
+                config.CreateMap<DentistaEspecialidade, DentistaEspecialidadeModel>()
+                    .ForMember(d => d.idDentista, d => d.MapFrom(x => $"{x.Dentista!.Id}"))
                     .ForMember(d => d.idEspecialidade, d => d.MapFrom(x => $"{x.Especialidade!.Id}"))
+                    .ForMember(d => d.nomeDentista, d => d.MapFrom(x => $"{x.Dentista!.Nome}"))
                     .ForMember(d => d.nomeEspecialidade, d => d.MapFrom(x => $"{x.Especialidade!.Nome}"));
 
                 config.CreateMap<Paciente, PacienteModel>()
@@ -91,6 +95,12 @@ namespace Consultorio.App.Infra
 
 
                 config.CreateMap<Especialidade, EspecialidadeModel>();
+
+                config.CreateMap<Convenio, ConvenioModel>();
+
+                config.CreateMap<Dentista, DentistaModel>();
+                    //.ForMember(d => d.Especialidades, d => d.MapFrom(x => $"{x.Especialidades}"));
+
 
             }).CreateMapper());
 

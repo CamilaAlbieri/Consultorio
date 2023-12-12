@@ -33,27 +33,59 @@ namespace Consultorio.App.Cadastros
 
         protected override void Salvar()
         {
-            //Salvar a especialidade
-            if (!String.IsNullOrEmpty(txtEspecialidade1.Text))
+            if (IsAlteracao)
             {
-
                 var espExiste = _especialidadeService.Get<Especialidade>().Where(x => x.Nome == txtEspecialidade1.Text).FirstOrDefault();
 
                 if (espExiste == null)
                 {
-                    _especialidadeService.Add<Especialidade, Especialidade, EspecialidadeValidator>(new Especialidade()
+                    Especialidade esp = new Especialidade()
                     {
+                        Id = int.Parse(txtId.Text),
                         Nome = txtEspecialidade1.Text
-                    });
+                    };
 
-                    Utils.Utils.messageBoxOk("Especialidade inserida com sucesso!", "Especialidade");
+                    _especialidadeService.Update<Especialidade, Especialidade, EspecialidadeValidator>(esp);
+
+                    Utils.Utils.messageBoxOk("Especialidade atualizada com sucesso!", "Especialidade");
                     LimpaCampos();
+                    IsAlteracao = false;
+
+                    tabCadastro.SelectedIndex = 1;
                 }
                 else
                 {
-
                     Utils.Utils.messageExclamation("Não pode inserir uma especialidade com o mesmo nome!", "Especialidade");
                 }
+            }
+            else
+            {
+                //Salvar a especialidade
+                if (!String.IsNullOrEmpty(txtEspecialidade1.Text))
+                {
+
+                    var espExiste = _especialidadeService.Get<Especialidade>().Where(x => x.Nome == txtEspecialidade1.Text).FirstOrDefault();
+
+                    if (espExiste == null)
+                    {
+                        _especialidadeService.Add<Especialidade, Especialidade, EspecialidadeValidator>(new Especialidade()
+                        {
+                            Nome = txtEspecialidade1.Text
+                        });
+
+                        Utils.Utils.messageBoxOk("Especialidade inserida com sucesso!", "Especialidade");
+                        LimpaCampos();
+
+                        tabCadastro.SelectedIndex = 1;
+                    }
+                    else
+                    {
+
+                        Utils.Utils.messageExclamation("Não pode inserir uma especialidade com o mesmo nome!", "Especialidade");
+                    }
+
+                }
+            
 
 
 
@@ -76,6 +108,8 @@ namespace Consultorio.App.Cadastros
 
         protected override void CarregaGrid()
         {
+            CarregaCombo();
+            IsAlteracao = false;
             especialidades = _especialidadeService.Get<Especialidade>().ToList();
 
             dataGridViewConsulta.DataSource = especialidades;
@@ -88,7 +122,7 @@ namespace Consultorio.App.Cadastros
         {
             txtId.Text = linha?.Cells["Id"].Value.ToString();
             txtEspecialidade1.Text = linha?.Cells["Nome"].Value.ToString();
-  
+
         }
 
     }

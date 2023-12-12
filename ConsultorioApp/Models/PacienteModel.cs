@@ -10,7 +10,7 @@ namespace ConsultorioApp.Models
         public String? Telefone { get; set; }
         public String? Observacao { get; set; }
         public int idConvenio { get; set; }
-        public String nomeConvenio { get; set; }
+        public String? nomeConvenio { get; set; }
 
     }
 }

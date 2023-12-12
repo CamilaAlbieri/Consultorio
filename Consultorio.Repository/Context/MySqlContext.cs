@@ -1,6 +1,7 @@
 ﻿using Consultorio.Domain.Entities;
 using Consultorio.Repository.Mapping;
 using Microsoft.EntityFrameworkCore;
+using static Consultorio.Repository.Mapping.DentistaMap;
 
 namespace Consultorio.Repository.Context
 {
@@ -18,6 +19,7 @@ namespace Consultorio.Repository.Context
         public DbSet<Dentista>? Dentista { get; set; }
         public DbSet<Especialidade>? Especialidade { get; set; }
         public DbSet<Paciente>? Paciente { get; set; }
+        public DbSet<DentistaEspecialidade>? DentistaEspecialidade { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -28,7 +30,8 @@ namespace Consultorio.Repository.Context
             modelBuilder.Entity<Dentista>(new DentistaMap().Configure);
             modelBuilder.Entity<Especialidade>(new EspecialidadeMap().Configure);
             modelBuilder.Entity<Paciente>(new PacienteMap().Configure);
-            
+            modelBuilder.Entity<DentistaEspecialidade>(new DentistaEspecialidadeMap().Configure);
+
         }
     }
 }

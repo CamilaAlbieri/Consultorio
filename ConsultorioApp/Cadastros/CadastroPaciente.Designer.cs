@@ -34,9 +34,9 @@
             txtObservacao = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             cboConvenio = new ReaLTaiizor.Controls.MaterialComboBox();
             panel3 = new Panel();
+            chkTodos = new CheckBox();
             btmPesquisar = new ReaLTaiizor.Controls.MaterialButton();
-            cboPesquisaConsulta = new ReaLTaiizor.Controls.MaterialComboBox();
-            cboPesquisaNomePaciente = new ReaLTaiizor.Controls.MaterialComboBox();
+            cboPesquisaConvenio = new ReaLTaiizor.Controls.MaterialComboBox();
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             tabCadastro.SuspendLayout();
             tabPageCadastro.SuspendLayout();
@@ -54,6 +54,10 @@
             tabPageCadastro.Controls.Add(txtCPF);
             tabPageCadastro.Controls.Add(txtTelefone);
             tabPageCadastro.Controls.Add(txtNome);
+            tabPageCadastro.Location = new Point(4, 31);
+            tabPageCadastro.Margin = new Padding(3, 5, 3, 5);
+            tabPageCadastro.Padding = new Padding(3, 5, 3, 5);
+            tabPageCadastro.Size = new Size(591, 584);
             tabPageCadastro.Controls.SetChildIndex(panel1, 0);
             tabPageCadastro.Controls.SetChildIndex(txtNome, 0);
             tabPageCadastro.Controls.SetChildIndex(txtTelefone, 0);
@@ -64,11 +68,16 @@
             // 
             // panel1
             // 
-            panel1.Location = new Point(4, 338);
+            panel1.Location = new Point(5, 451);
+            panel1.Margin = new Padding(3, 5, 3, 5);
             // 
             // tabPageConsulta
             // 
             tabPageConsulta.Controls.Add(panel3);
+            tabPageConsulta.Location = new Point(4, 31);
+            tabPageConsulta.Margin = new Padding(3, 5, 3, 5);
+            tabPageConsulta.Padding = new Padding(3, 5, 3, 5);
+            tabPageConsulta.Size = new Size(591, 584);
             tabPageConsulta.Controls.SetChildIndex(panel2, 0);
             tabPageConsulta.Controls.SetChildIndex(panel3, 0);
             // 
@@ -87,7 +96,8 @@
             txtCPF.Hint = "CPF";
             txtCPF.InsertKeyMode = InsertKeyMode.Default;
             txtCPF.LeadingIcon = null;
-            txtCPF.Location = new Point(15, 127);
+            txtCPF.Location = new Point(17, 169);
+            txtCPF.Margin = new Padding(3, 4, 3, 4);
             txtCPF.Mask = "999,999,999-99";
             txtCPF.MaxLength = 32767;
             txtCPF.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -104,7 +114,7 @@
             txtCPF.SelectionLength = 0;
             txtCPF.SelectionStart = 0;
             txtCPF.ShortcutsEnabled = true;
-            txtCPF.Size = new Size(477, 48);
+            txtCPF.Size = new Size(545, 48);
             txtCPF.SkipLiterals = true;
             txtCPF.TabIndex = 6;
             txtCPF.TabStop = false;
@@ -130,7 +140,8 @@
             txtTelefone.Hint = "Telefone";
             txtTelefone.InsertKeyMode = InsertKeyMode.Default;
             txtTelefone.LeadingIcon = null;
-            txtTelefone.Location = new Point(15, 73);
+            txtTelefone.Location = new Point(17, 97);
+            txtTelefone.Margin = new Padding(3, 4, 3, 4);
             txtTelefone.Mask = "(99)99999-9999";
             txtTelefone.MaxLength = 32767;
             txtTelefone.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
@@ -147,7 +158,7 @@
             txtTelefone.SelectionLength = 0;
             txtTelefone.SelectionStart = 0;
             txtTelefone.ShortcutsEnabled = true;
-            txtTelefone.Size = new Size(477, 48);
+            txtTelefone.Size = new Size(545, 48);
             txtTelefone.SkipLiterals = true;
             txtTelefone.TabIndex = 5;
             txtTelefone.TabStop = false;
@@ -170,7 +181,8 @@
             txtNome.HideSelection = true;
             txtNome.Hint = "Nome";
             txtNome.LeadingIcon = null;
-            txtNome.Location = new Point(15, 19);
+            txtNome.Location = new Point(17, 25);
+            txtNome.Margin = new Padding(3, 4, 3, 4);
             txtNome.MaxLength = 32767;
             txtNome.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtNome.Name = "txtNome";
@@ -182,7 +194,7 @@
             txtNome.SelectionLength = 0;
             txtNome.SelectionStart = 0;
             txtNome.ShortcutsEnabled = true;
-            txtNome.Size = new Size(427, 48);
+            txtNome.Size = new Size(488, 48);
             txtNome.TabIndex = 4;
             txtNome.TabStop = false;
             txtNome.TextAlign = HorizontalAlignment.Left;
@@ -201,7 +213,8 @@
             txtObservacao.HideSelection = true;
             txtObservacao.Hint = "Observação";
             txtObservacao.LeadingIcon = null;
-            txtObservacao.Location = new Point(20, 190);
+            txtObservacao.Location = new Point(23, 253);
+            txtObservacao.Margin = new Padding(3, 4, 3, 4);
             txtObservacao.MaxLength = 32767;
             txtObservacao.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtObservacao.Name = "txtObservacao";
@@ -213,7 +226,7 @@
             txtObservacao.SelectionLength = 0;
             txtObservacao.SelectionStart = 0;
             txtObservacao.ShortcutsEnabled = true;
-            txtObservacao.Size = new Size(472, 48);
+            txtObservacao.Size = new Size(539, 48);
             txtObservacao.TabIndex = 7;
             txtObservacao.TabStop = false;
             txtObservacao.TextAlign = HorizontalAlignment.Left;
@@ -235,23 +248,35 @@
             cboConvenio.Hint = "Convênio";
             cboConvenio.IntegralHeight = false;
             cboConvenio.ItemHeight = 43;
-            cboConvenio.Location = new Point(20, 244);
+            cboConvenio.Location = new Point(23, 325);
+            cboConvenio.Margin = new Padding(3, 4, 3, 4);
             cboConvenio.MaxDropDownItems = 4;
             cboConvenio.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboConvenio.Name = "cboConvenio";
-            cboConvenio.Size = new Size(470, 49);
+            cboConvenio.Size = new Size(537, 49);
             cboConvenio.StartIndex = 0;
             cboConvenio.TabIndex = 8;
             // 
             // panel3
             // 
+            panel3.Controls.Add(chkTodos);
             panel3.Controls.Add(btmPesquisar);
-            panel3.Controls.Add(cboPesquisaConsulta);
-            panel3.Controls.Add(cboPesquisaNomePaciente);
-            panel3.Location = new Point(9, 6);
+            panel3.Controls.Add(cboPesquisaConvenio);
+            panel3.Location = new Point(10, 8);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(497, 193);
+            panel3.Size = new Size(568, 228);
             panel3.TabIndex = 5;
+            // 
+            // chkTodos
+            // 
+            chkTodos.AutoSize = true;
+            chkTodos.Location = new Point(18, 112);
+            chkTodos.Name = "chkTodos";
+            chkTodos.Size = new Size(203, 24);
+            chkTodos.TabIndex = 18;
+            chkTodos.Text = "Selecionar todos paciente";
+            chkTodos.UseVisualStyleBackColor = true;
             // 
             // btmPesquisar
             // 
@@ -261,8 +286,8 @@
             btmPesquisar.HighEmphasis = true;
             btmPesquisar.Icon = null;
             btmPesquisar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btmPesquisar.Location = new Point(195, 140);
-            btmPesquisar.Margin = new Padding(4, 6, 4, 6);
+            btmPesquisar.Location = new Point(221, 157);
+            btmPesquisar.Margin = new Padding(5, 8, 5, 8);
             btmPesquisar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btmPesquisar.Name = "btmPesquisar";
             btmPesquisar.NoAccentTextColor = Color.Empty;
@@ -272,52 +297,31 @@
             btmPesquisar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btmPesquisar.UseAccentColor = false;
             btmPesquisar.UseVisualStyleBackColor = true;
+            btmPesquisar.Click += btmPesquisar_Click;
             // 
-            // cboPesquisaConsulta
+            // cboPesquisaConvenio
             // 
-            cboPesquisaConsulta.AutoResize = false;
-            cboPesquisaConsulta.BackColor = Color.FromArgb(255, 255, 255);
-            cboPesquisaConsulta.Depth = 0;
-            cboPesquisaConsulta.DrawMode = DrawMode.OwnerDrawVariable;
-            cboPesquisaConsulta.DropDownHeight = 174;
-            cboPesquisaConsulta.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboPesquisaConsulta.DropDownWidth = 121;
-            cboPesquisaConsulta.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            cboPesquisaConsulta.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            cboPesquisaConsulta.FormattingEnabled = true;
-            cboPesquisaConsulta.Hint = "Consulta";
-            cboPesquisaConsulta.IntegralHeight = false;
-            cboPesquisaConsulta.ItemHeight = 43;
-            cboPesquisaConsulta.Location = new Point(16, 72);
-            cboPesquisaConsulta.MaxDropDownItems = 4;
-            cboPesquisaConsulta.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            cboPesquisaConsulta.Name = "cboPesquisaConsulta";
-            cboPesquisaConsulta.Size = new Size(464, 49);
-            cboPesquisaConsulta.StartIndex = 0;
-            cboPesquisaConsulta.TabIndex = 14;
-            // 
-            // cboPesquisaNomePaciente
-            // 
-            cboPesquisaNomePaciente.AutoResize = false;
-            cboPesquisaNomePaciente.BackColor = Color.FromArgb(255, 255, 255);
-            cboPesquisaNomePaciente.Depth = 0;
-            cboPesquisaNomePaciente.DrawMode = DrawMode.OwnerDrawVariable;
-            cboPesquisaNomePaciente.DropDownHeight = 174;
-            cboPesquisaNomePaciente.DropDownStyle = ComboBoxStyle.DropDownList;
-            cboPesquisaNomePaciente.DropDownWidth = 121;
-            cboPesquisaNomePaciente.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
-            cboPesquisaNomePaciente.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            cboPesquisaNomePaciente.FormattingEnabled = true;
-            cboPesquisaNomePaciente.Hint = "Paciente";
-            cboPesquisaNomePaciente.IntegralHeight = false;
-            cboPesquisaNomePaciente.ItemHeight = 43;
-            cboPesquisaNomePaciente.Location = new Point(17, 13);
-            cboPesquisaNomePaciente.MaxDropDownItems = 4;
-            cboPesquisaNomePaciente.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            cboPesquisaNomePaciente.Name = "cboPesquisaNomePaciente";
-            cboPesquisaNomePaciente.Size = new Size(464, 49);
-            cboPesquisaNomePaciente.StartIndex = 0;
-            cboPesquisaNomePaciente.TabIndex = 13;
+            cboPesquisaConvenio.AutoResize = false;
+            cboPesquisaConvenio.BackColor = Color.FromArgb(255, 255, 255);
+            cboPesquisaConvenio.Depth = 0;
+            cboPesquisaConvenio.DrawMode = DrawMode.OwnerDrawVariable;
+            cboPesquisaConvenio.DropDownHeight = 174;
+            cboPesquisaConvenio.DropDownStyle = ComboBoxStyle.DropDownList;
+            cboPesquisaConvenio.DropDownWidth = 121;
+            cboPesquisaConvenio.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Bold, GraphicsUnit.Pixel);
+            cboPesquisaConvenio.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            cboPesquisaConvenio.FormattingEnabled = true;
+            cboPesquisaConvenio.Hint = "Convênio";
+            cboPesquisaConvenio.IntegralHeight = false;
+            cboPesquisaConvenio.ItemHeight = 43;
+            cboPesquisaConvenio.Location = new Point(18, 45);
+            cboPesquisaConvenio.Margin = new Padding(3, 4, 3, 4);
+            cboPesquisaConvenio.MaxDropDownItems = 4;
+            cboPesquisaConvenio.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            cboPesquisaConvenio.Name = "cboPesquisaConvenio";
+            cboPesquisaConvenio.Size = new Size(530, 49);
+            cboPesquisaConvenio.StartIndex = 0;
+            cboPesquisaConvenio.TabIndex = 13;
             // 
             // txtId
             // 
@@ -331,7 +335,8 @@
             txtId.HideSelection = true;
             txtId.Hint = "Id";
             txtId.LeadingIcon = null;
-            txtId.Location = new Point(448, 19);
+            txtId.Location = new Point(512, 25);
+            txtId.Margin = new Padding(3, 4, 3, 4);
             txtId.MaxLength = 32767;
             txtId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtId.Name = "txtId";
@@ -343,7 +348,7 @@
             txtId.SelectionLength = 0;
             txtId.SelectionStart = 0;
             txtId.ShortcutsEnabled = true;
-            txtId.Size = new Size(42, 48);
+            txtId.Size = new Size(48, 48);
             txtId.TabIndex = 12;
             txtId.TabStop = false;
             txtId.TextAlign = HorizontalAlignment.Left;
@@ -352,11 +357,13 @@
             // 
             // CadastroPaciente
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(548, 523);
+            ClientSize = new Size(626, 697);
             Location = new Point(0, 0);
+            Margin = new Padding(3, 5, 3, 5);
             Name = "CadastroPaciente";
+            Padding = new Padding(3, 113, 3, 5);
             Text = "CadastroPaciente";
             tabCadastro.ResumeLayout(false);
             tabPageCadastro.ResumeLayout(false);
@@ -379,8 +386,9 @@
         private ReaLTaiizor.Controls.MaterialComboBox cboConvenio;
         private Panel panel3;
         private ReaLTaiizor.Controls.MaterialComboBox cboPesquisaConsulta;
-        private ReaLTaiizor.Controls.MaterialComboBox cboPesquisaNomePaciente;
+        private ReaLTaiizor.Controls.MaterialComboBox cboPesquisaConvenio;
         private ReaLTaiizor.Controls.MaterialButton btmPesquisar;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
+        private CheckBox chkTodos;
     }
 }

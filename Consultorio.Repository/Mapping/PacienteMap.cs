@@ -19,7 +19,7 @@ namespace Consultorio.Repository.Mapping
             
             builder.Property(prop => prop.CPF)
                 .IsRequired()
-                .HasColumnType("varchar(11)");
+                .HasColumnType("varchar(14)");
 
             builder.Property(prop => prop.Observacao)
                .HasColumnType("varchar(100)");

@@ -46,33 +46,42 @@
             // 
             // tabCadastro
             // 
-            tabCadastro.Size = new Size(524, 469);
+            tabCadastro.Margin = new Padding(3, 5, 3, 5);
+            tabCadastro.Size = new Size(599, 625);
             // 
             // tabPageCadastro
             // 
             tabPageCadastro.Controls.Add(txtId);
             tabPageCadastro.Controls.Add(txtEspecialidade1);
-            tabPageCadastro.Size = new Size(516, 434);
+            tabPageCadastro.Location = new Point(4, 31);
+            tabPageCadastro.Margin = new Padding(3, 5, 3, 5);
+            tabPageCadastro.Padding = new Padding(3, 5, 3, 5);
+            tabPageCadastro.Size = new Size(591, 590);
             tabPageCadastro.Controls.SetChildIndex(panel1, 0);
             tabPageCadastro.Controls.SetChildIndex(txtEspecialidade1, 0);
             tabPageCadastro.Controls.SetChildIndex(txtId, 0);
             // 
             // panel1
             // 
-            panel1.Location = new Point(7, 158);
+            panel1.Location = new Point(8, 211);
+            panel1.Margin = new Padding(3, 5, 3, 5);
             // 
             // tabPageConsulta
             // 
             tabPageConsulta.Controls.Add(btnPesquisar);
             tabPageConsulta.Controls.Add(cboEspecialidade);
-            tabPageConsulta.Size = new Size(516, 434);
+            tabPageConsulta.Location = new Point(4, 31);
+            tabPageConsulta.Margin = new Padding(3, 5, 3, 5);
+            tabPageConsulta.Padding = new Padding(3, 5, 3, 5);
+            tabPageConsulta.Size = new Size(591, 590);
             tabPageConsulta.Controls.SetChildIndex(panel2, 0);
             tabPageConsulta.Controls.SetChildIndex(cboEspecialidade, 0);
             tabPageConsulta.Controls.SetChildIndex(btnPesquisar, 0);
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(287, 4);
+            btnCancelar.Location = new Point(328, 5);
+            btnCancelar.Margin = new Padding(6, 11, 6, 11);
             // 
             // txtEspecialidade
             // 
@@ -168,7 +177,8 @@
             txtEspecialidade1.HideSelection = true;
             txtEspecialidade1.Hint = "Especialidade";
             txtEspecialidade1.LeadingIcon = null;
-            txtEspecialidade1.Location = new Point(7, 44);
+            txtEspecialidade1.Location = new Point(8, 59);
+            txtEspecialidade1.Margin = new Padding(3, 4, 3, 4);
             txtEspecialidade1.MaxLength = 32767;
             txtEspecialidade1.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtEspecialidade1.Name = "txtEspecialidade1";
@@ -180,7 +190,7 @@
             txtEspecialidade1.SelectionLength = 0;
             txtEspecialidade1.SelectionStart = 0;
             txtEspecialidade1.ShortcutsEnabled = true;
-            txtEspecialidade1.Size = new Size(449, 48);
+            txtEspecialidade1.Size = new Size(513, 48);
             txtEspecialidade1.TabIndex = 1;
             txtEspecialidade1.TabStop = false;
             txtEspecialidade1.TextAlign = HorizontalAlignment.Left;
@@ -202,11 +212,12 @@
             cboEspecialidade.Hint = "Especialidade";
             cboEspecialidade.IntegralHeight = false;
             cboEspecialidade.ItemHeight = 43;
-            cboEspecialidade.Location = new Point(9, 34);
+            cboEspecialidade.Location = new Point(10, 45);
+            cboEspecialidade.Margin = new Padding(3, 4, 3, 4);
             cboEspecialidade.MaxDropDownItems = 4;
             cboEspecialidade.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboEspecialidade.Name = "cboEspecialidade";
-            cboEspecialidade.Size = new Size(497, 49);
+            cboEspecialidade.Size = new Size(567, 49);
             cboEspecialidade.StartIndex = 0;
             cboEspecialidade.TabIndex = 6;
             // 
@@ -218,8 +229,8 @@
             btnPesquisar.HighEmphasis = true;
             btnPesquisar.Icon = null;
             btnPesquisar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnPesquisar.Location = new Point(181, 114);
-            btnPesquisar.Margin = new Padding(4, 6, 4, 6);
+            btnPesquisar.Location = new Point(207, 152);
+            btnPesquisar.Margin = new Padding(5, 8, 5, 8);
             btnPesquisar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnPesquisar.Name = "btnPesquisar";
             btnPesquisar.NoAccentTextColor = Color.Empty;
@@ -238,11 +249,13 @@
             txtId.BackgroundImageLayout = ImageLayout.None;
             txtId.CharacterCasing = CharacterCasing.Normal;
             txtId.Depth = 0;
+            txtId.Enabled = false;
             txtId.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtId.HideSelection = true;
             txtId.Hint = "Id";
             txtId.LeadingIcon = null;
-            txtId.Location = new Point(462, 44);
+            txtId.Location = new Point(528, 59);
+            txtId.Margin = new Padding(3, 4, 3, 4);
             txtId.MaxLength = 32767;
             txtId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtId.Name = "txtId";
@@ -254,7 +267,7 @@
             txtId.SelectionLength = 0;
             txtId.SelectionStart = 0;
             txtId.ShortcutsEnabled = true;
-            txtId.Size = new Size(42, 48);
+            txtId.Size = new Size(48, 48);
             txtId.TabIndex = 12;
             txtId.TabStop = false;
             txtId.TextAlign = HorizontalAlignment.Left;
@@ -263,11 +276,13 @@
             // 
             // CadastroEspecialidade
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(546, 545);
+            ClientSize = new Size(624, 727);
             Location = new Point(0, 0);
+            Margin = new Padding(3, 5, 3, 5);
             Name = "CadastroEspecialidade";
+            Padding = new Padding(3, 113, 3, 5);
             Text = "CadastroEspecialidade";
             tabCadastro.ResumeLayout(false);
             tabPageCadastro.ResumeLayout(false);
