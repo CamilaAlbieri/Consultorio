@@ -5,6 +5,7 @@ using Consultorio.Domain.Base;
 using Consultorio.Domain.Entities;
 using Consultorio.Service.Validators;
 using ConsultorioApp.Models;
+using System.Globalization;
 
 namespace Consultorio.App.Cadastros
 {
@@ -63,10 +64,9 @@ namespace Consultorio.App.Cadastros
                 consulta.Paciente = paciente;
             }
 
-            if (DateTime.TryParse(txtDataConsulta.Text, out var dataConsulta))
-            {
-                consulta.Data = dataConsulta;
-            }
+
+            consulta.Data = dtpDataConsulta.Value; ;
+
 
 
             if (float.TryParse(txtValorConsulta.Text, out var valorConsulta))
@@ -144,9 +144,9 @@ namespace Consultorio.App.Cadastros
         protected override void CarregaRegistro(DataGridViewRow? linha)
         {
             txtId.Text = linha?.Cells["Id"].Value.ToString();
-            txtValorConsulta.Text = linha?.Cells["ValorConsulta"].Value.ToString();
-            txtDataConsulta.Text = linha?.Cells["DataConsulta"].Value.ToString();
-            txtDescricao.Text = linha?.Cells["Descricao"].Value == null ? "" : linha?.Cells["Observacao"].Value.ToString();
+            txtValorConsulta.Text = linha?.Cells["Valor"].Value.ToString();
+            dtpDataConsulta.Text = linha?.Cells["Data"].Value.ToString();
+            txtDescricao.Text = linha?.Cells["Descricao"].Value == null ? "" : linha?.Cells["Descricao"].Value.ToString();
 
         }
 
@@ -158,14 +158,47 @@ namespace Consultorio.App.Cadastros
             }
             else
             {
-               
                 var dentista = (DentistaModel)cboPesquisaNomeDentista.SelectedItem;
                 var paciente = (PacienteModel)cboPesquisaNomePaciente.SelectedItem;
 
-                var consultas = _consultaService.Get<ConsultaModel>(new List<String>() { "Dentista", "Paciente" }).Where(x => x.idDentista == dentista.Id && x.idPaciente == paciente.Id)
-                    .ToList();
+               
 
-                dataGridViewConsulta.DataSource = consultas;
+                if (chkDentista.Checked)
+                {
+                   
+
+                    var consultas = _consultaService.Get<ConsultaModel>(new List<String>() { "Dentista", "Paciente" })
+                       .Where(x => x.idDentista == dentista.Id)
+                       .ToList();
+
+                    dataGridViewConsulta.DataSource = consultas;
+                }
+                else
+                {
+                    if (chkPaciente.Checked)
+                    {
+                        var consultas = _consultaService.Get<ConsultaModel>(new List<String>() { "Dentista", "Paciente" })
+                       .Where(x => x.idPaciente == paciente.Id)
+                       .ToList();
+
+                        dataGridViewConsulta.DataSource = consultas;
+                    }
+                    else
+                    {
+                        if (chkPesquisarData.Checked)
+                        {
+                            var dataInicio = dtpInicio.Value;
+
+
+                            consultas = _consultaService.Get<ConsultaModel>(new List<String>() { "Dentista", "Paciente" })
+                                    .Where(x => x.Data == dataInicio).ToList();
+
+                            dataGridViewConsulta.DataSource = consultas;
+
+                        }
+                    }
+                }
+
                 //dataGridViewConsulta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 dataGridViewConsulta.Columns["IdConvenio"]!.Visible = false;
                 dataGridViewConsulta.Columns["IdPaciente"]!.Visible = false;

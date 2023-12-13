@@ -63,7 +63,7 @@
             tabPageCadastro.Controls.Add(txtNome);
             tabPageCadastro.Margin = new Padding(3, 4, 3, 4);
             tabPageCadastro.Padding = new Padding(3, 4, 3, 4);
-            tabPageCadastro.Size = new Size(516, 439);
+            tabPageCadastro.Size = new Size(516, 373);
             tabPageCadastro.Controls.SetChildIndex(panel1, 0);
             tabPageCadastro.Controls.SetChildIndex(txtNome, 0);
             tabPageCadastro.Controls.SetChildIndex(txtTelefone, 0);
@@ -80,7 +80,7 @@
             // 
             // panel2
             // 
-            panel2.Location = new Point(6, 301);
+            panel2.Location = new Point(12, 297);
             panel2.Margin = new Padding(3, 2, 3, 2);
             panel2.Size = new Size(498, 65);
             // 
@@ -96,27 +96,27 @@
             // btnNovo
             // 
             btnNovo.Location = new Point(214, 10);
-            btnNovo.Margin = new Padding(4, 4, 4, 4);
+            btnNovo.Margin = new Padding(4);
             // 
             // btnEditar
             // 
             btnEditar.Location = new Point(305, 10);
-            btnEditar.Margin = new Padding(4, 4, 4, 4);
+            btnEditar.Margin = new Padding(4);
             // 
             // btnExcluir
             // 
             btnExcluir.Location = new Point(398, 10);
-            btnExcluir.Margin = new Padding(4, 4, 4, 4);
+            btnExcluir.Margin = new Padding(4);
             // 
             // btnCancelar
             // 
             btnCancelar.Location = new Point(268, 3);
-            btnCancelar.Margin = new Padding(4, 4, 4, 4);
+            btnCancelar.Margin = new Padding(4);
             // 
             // btnSalvar
             // 
             btnSalvar.Location = new Point(359, 3);
-            btnSalvar.Margin = new Padding(4, 4, 4, 4);
+            btnSalvar.Margin = new Padding(4);
             // 
             // txtNome
             // 

@@ -31,17 +31,21 @@
             cboNomePaciente = new ReaLTaiizor.Controls.MaterialComboBox();
             cboNomeDentista = new ReaLTaiizor.Controls.MaterialComboBox();
             txtValorConsulta = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            txtDataConsulta = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             txtDescricao = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             panel3 = new Panel();
+            chkPesquisarData = new CheckBox();
+            label2 = new Label();
+            dtpInicio = new DateTimePicker();
             chkTodos = new CheckBox();
             btmPesquisar = new ReaLTaiizor.Controls.MaterialButton();
             cboPesquisaNomePaciente = new ReaLTaiizor.Controls.MaterialComboBox();
             cboPesquisaNomeDentista = new ReaLTaiizor.Controls.MaterialComboBox();
-            txtDataFim = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
-            txtDataInicio = new ReaLTaiizor.Controls.MaterialMaskedTextBox();
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             label1 = new Label();
+            dtpDataConsulta = new DateTimePicker();
+            label4 = new Label();
+            chkDentista = new CheckBox();
+            chkPaciente = new CheckBox();
             tabCadastro.SuspendLayout();
             tabPageCadastro.SuspendLayout();
             panel1.SuspendLayout();
@@ -58,10 +62,11 @@
             // 
             // tabPageCadastro
             // 
+            tabPageCadastro.Controls.Add(label4);
+            tabPageCadastro.Controls.Add(dtpDataConsulta);
             tabPageCadastro.Controls.Add(label1);
             tabPageCadastro.Controls.Add(txtId);
             tabPageCadastro.Controls.Add(txtDescricao);
-            tabPageCadastro.Controls.Add(txtDataConsulta);
             tabPageCadastro.Controls.Add(txtValorConsulta);
             tabPageCadastro.Controls.Add(cboNomeDentista);
             tabPageCadastro.Controls.Add(cboNomePaciente);
@@ -70,10 +75,11 @@
             tabPageCadastro.Controls.SetChildIndex(cboNomePaciente, 0);
             tabPageCadastro.Controls.SetChildIndex(cboNomeDentista, 0);
             tabPageCadastro.Controls.SetChildIndex(txtValorConsulta, 0);
-            tabPageCadastro.Controls.SetChildIndex(txtDataConsulta, 0);
             tabPageCadastro.Controls.SetChildIndex(txtDescricao, 0);
             tabPageCadastro.Controls.SetChildIndex(txtId, 0);
             tabPageCadastro.Controls.SetChildIndex(label1, 0);
+            tabPageCadastro.Controls.SetChildIndex(dtpDataConsulta, 0);
+            tabPageCadastro.Controls.SetChildIndex(label4, 0);
             // 
             // panel1
             // 
@@ -115,7 +121,7 @@
             cboNomePaciente.Hint = "Paciente";
             cboNomePaciente.IntegralHeight = false;
             cboNomePaciente.ItemHeight = 43;
-            cboNomePaciente.Location = new Point(15, 74);
+            cboNomePaciente.Location = new Point(15, 84);
             cboNomePaciente.MaxDropDownItems = 4;
             cboNomePaciente.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboNomePaciente.Name = "cboNomePaciente";
@@ -158,7 +164,7 @@
             txtValorConsulta.HideSelection = true;
             txtValorConsulta.Hint = "Valor Consulta";
             txtValorConsulta.LeadingIcon = null;
-            txtValorConsulta.Location = new Point(56, 129);
+            txtValorConsulta.Location = new Point(56, 148);
             txtValorConsulta.MaxLength = 32767;
             txtValorConsulta.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtValorConsulta.Name = "txtValorConsulta";
@@ -170,56 +176,13 @@
             txtValorConsulta.SelectionLength = 0;
             txtValorConsulta.SelectionStart = 0;
             txtValorConsulta.ShortcutsEnabled = true;
-            txtValorConsulta.Size = new Size(289, 48);
+            txtValorConsulta.Size = new Size(309, 48);
             txtValorConsulta.TabIndex = 7;
             txtValorConsulta.TabStop = false;
             txtValorConsulta.Tag = "";
             txtValorConsulta.TextAlign = HorizontalAlignment.Left;
             txtValorConsulta.TrailingIcon = null;
             txtValorConsulta.UseSystemPasswordChar = false;
-            // 
-            // txtDataConsulta
-            // 
-            txtDataConsulta.AllowPromptAsInput = true;
-            txtDataConsulta.AnimateReadOnly = false;
-            txtDataConsulta.AsciiOnly = false;
-            txtDataConsulta.BackgroundImageLayout = ImageLayout.None;
-            txtDataConsulta.BeepOnError = false;
-            txtDataConsulta.CutCopyMaskFormat = MaskFormat.IncludeLiterals;
-            txtDataConsulta.Depth = 0;
-            txtDataConsulta.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtDataConsulta.HidePromptOnLeave = false;
-            txtDataConsulta.HideSelection = true;
-            txtDataConsulta.Hint = "Data Consulta";
-            txtDataConsulta.InsertKeyMode = InsertKeyMode.Default;
-            txtDataConsulta.LeadingIcon = null;
-            txtDataConsulta.Location = new Point(351, 129);
-            txtDataConsulta.Mask = "99/99/9999";
-            txtDataConsulta.MaxLength = 32767;
-            txtDataConsulta.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtDataConsulta.Name = "txtDataConsulta";
-            txtDataConsulta.PasswordChar = '\0';
-            txtDataConsulta.PrefixSuffixText = null;
-            txtDataConsulta.PromptChar = '_';
-            txtDataConsulta.ReadOnly = false;
-            txtDataConsulta.RejectInputOnFirstFailure = false;
-            txtDataConsulta.ResetOnPrompt = true;
-            txtDataConsulta.ResetOnSpace = true;
-            txtDataConsulta.RightToLeft = RightToLeft.No;
-            txtDataConsulta.SelectedText = "";
-            txtDataConsulta.SelectionLength = 0;
-            txtDataConsulta.SelectionStart = 0;
-            txtDataConsulta.ShortcutsEnabled = true;
-            txtDataConsulta.Size = new Size(141, 48);
-            txtDataConsulta.SkipLiterals = true;
-            txtDataConsulta.TabIndex = 8;
-            txtDataConsulta.TabStop = false;
-            txtDataConsulta.Text = "  /  /";
-            txtDataConsulta.TextAlign = HorizontalAlignment.Left;
-            txtDataConsulta.TextMaskFormat = MaskFormat.IncludeLiterals;
-            txtDataConsulta.TrailingIcon = null;
-            txtDataConsulta.UseSystemPasswordChar = false;
-            txtDataConsulta.ValidatingType = null;
             // 
             // txtDescricao
             // 
@@ -233,7 +196,7 @@
             txtDescricao.HideSelection = true;
             txtDescricao.Hint = "Descrição";
             txtDescricao.LeadingIcon = null;
-            txtDescricao.Location = new Point(15, 183);
+            txtDescricao.Location = new Point(15, 212);
             txtDescricao.MaxLength = 32767;
             txtDescricao.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtDescricao.Name = "txtDescricao";
@@ -254,16 +217,53 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(chkPaciente);
+            panel3.Controls.Add(chkDentista);
+            panel3.Controls.Add(chkPesquisarData);
+            panel3.Controls.Add(label2);
+            panel3.Controls.Add(dtpInicio);
             panel3.Controls.Add(chkTodos);
             panel3.Controls.Add(btmPesquisar);
             panel3.Controls.Add(cboPesquisaNomePaciente);
             panel3.Controls.Add(cboPesquisaNomeDentista);
-            panel3.Controls.Add(txtDataFim);
-            panel3.Controls.Add(txtDataInicio);
             panel3.Location = new Point(9, 6);
             panel3.Name = "panel3";
             panel3.Size = new Size(507, 179);
             panel3.TabIndex = 5;
+            // 
+            // chkPesquisarData
+            // 
+            chkPesquisarData.AutoSize = true;
+            chkPesquisarData.Location = new Point(12, 125);
+            chkPesquisarData.Name = "chkPesquisarData";
+            chkPesquisarData.Size = new Size(123, 19);
+            chkPesquisarData.TabIndex = 19;
+            chkPesquisarData.Text = "Pesquisar por data";
+            chkPesquisarData.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = SystemColors.ControlDarkDark;
+            label2.Location = new Point(26, 4);
+            label2.Name = "label2";
+            label2.Size = new Size(59, 28);
+            label2.TabIndex = 17;
+            label2.Text = "Início";
+            // 
+            // dtpInicio
+            // 
+            dtpInicio.CalendarMonthBackground = SystemColors.ScrollBar;
+            dtpInicio.CalendarTitleBackColor = SystemColors.Highlight;
+            dtpInicio.CalendarTrailingForeColor = SystemColors.ControlDark;
+            dtpInicio.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpInicio.Format = DateTimePickerFormat.Short;
+            dtpInicio.Location = new Point(11, 35);
+            dtpInicio.MinDate = new DateTime(1903, 1, 1, 0, 0, 0, 0);
+            dtpInicio.Name = "dtpInicio";
+            dtpInicio.Size = new Size(97, 27);
+            dtpInicio.TabIndex = 15;
             // 
             // chkTodos
             // 
@@ -283,7 +283,7 @@
             btmPesquisar.HighEmphasis = true;
             btmPesquisar.Icon = null;
             btmPesquisar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btmPesquisar.Location = new Point(192, 138);
+            btmPesquisar.Location = new Point(359, 128);
             btmPesquisar.Margin = new Padding(4, 6, 4, 6);
             btmPesquisar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btmPesquisar.Name = "btmPesquisar";
@@ -310,7 +310,7 @@
             cboPesquisaNomePaciente.Hint = "Paciente";
             cboPesquisaNomePaciente.IntegralHeight = false;
             cboPesquisaNomePaciente.ItemHeight = 43;
-            cboPesquisaNomePaciente.Location = new Point(11, 80);
+            cboPesquisaNomePaciente.Location = new Point(12, 70);
             cboPesquisaNomePaciente.MaxDropDownItems = 4;
             cboPesquisaNomePaciente.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboPesquisaNomePaciente.Name = "cboPesquisaNomePaciente";
@@ -333,99 +333,13 @@
             cboPesquisaNomeDentista.Hint = "Dentista";
             cboPesquisaNomeDentista.IntegralHeight = false;
             cboPesquisaNomeDentista.ItemHeight = 43;
-            cboPesquisaNomeDentista.Location = new Point(217, 15);
+            cboPesquisaNomeDentista.Location = new Point(114, 15);
             cboPesquisaNomeDentista.MaxDropDownItems = 4;
             cboPesquisaNomeDentista.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboPesquisaNomeDentista.Name = "cboPesquisaNomeDentista";
-            cboPesquisaNomeDentista.Size = new Size(272, 49);
+            cboPesquisaNomeDentista.Size = new Size(375, 49);
             cboPesquisaNomeDentista.StartIndex = 0;
             cboPesquisaNomeDentista.TabIndex = 11;
-            // 
-            // txtDataFim
-            // 
-            txtDataFim.AllowPromptAsInput = true;
-            txtDataFim.AnimateReadOnly = false;
-            txtDataFim.AsciiOnly = false;
-            txtDataFim.BackgroundImageLayout = ImageLayout.None;
-            txtDataFim.BeepOnError = false;
-            txtDataFim.CutCopyMaskFormat = MaskFormat.IncludeLiterals;
-            txtDataFim.Depth = 0;
-            txtDataFim.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtDataFim.HidePromptOnLeave = false;
-            txtDataFim.HideSelection = true;
-            txtDataFim.Hint = "Data Fim";
-            txtDataFim.InsertKeyMode = InsertKeyMode.Default;
-            txtDataFim.LeadingIcon = null;
-            txtDataFim.Location = new Point(114, 16);
-            txtDataFim.Mask = "99/99/9999";
-            txtDataFim.MaxLength = 32767;
-            txtDataFim.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtDataFim.Name = "txtDataFim";
-            txtDataFim.PasswordChar = '\0';
-            txtDataFim.PrefixSuffixText = null;
-            txtDataFim.PromptChar = '_';
-            txtDataFim.ReadOnly = false;
-            txtDataFim.RejectInputOnFirstFailure = false;
-            txtDataFim.ResetOnPrompt = true;
-            txtDataFim.ResetOnSpace = true;
-            txtDataFim.RightToLeft = RightToLeft.No;
-            txtDataFim.SelectedText = "";
-            txtDataFim.SelectionLength = 0;
-            txtDataFim.SelectionStart = 0;
-            txtDataFim.ShortcutsEnabled = true;
-            txtDataFim.Size = new Size(97, 48);
-            txtDataFim.SkipLiterals = true;
-            txtDataFim.TabIndex = 10;
-            txtDataFim.TabStop = false;
-            txtDataFim.Text = "  /  /";
-            txtDataFim.TextAlign = HorizontalAlignment.Left;
-            txtDataFim.TextMaskFormat = MaskFormat.IncludeLiterals;
-            txtDataFim.TrailingIcon = null;
-            txtDataFim.UseSystemPasswordChar = false;
-            txtDataFim.ValidatingType = null;
-            // 
-            // txtDataInicio
-            // 
-            txtDataInicio.AllowPromptAsInput = true;
-            txtDataInicio.AnimateReadOnly = false;
-            txtDataInicio.AsciiOnly = false;
-            txtDataInicio.BackgroundImageLayout = ImageLayout.None;
-            txtDataInicio.BeepOnError = false;
-            txtDataInicio.CutCopyMaskFormat = MaskFormat.IncludeLiterals;
-            txtDataInicio.Depth = 0;
-            txtDataInicio.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
-            txtDataInicio.HidePromptOnLeave = false;
-            txtDataInicio.HideSelection = true;
-            txtDataInicio.Hint = "Data Início";
-            txtDataInicio.InsertKeyMode = InsertKeyMode.Default;
-            txtDataInicio.LeadingIcon = null;
-            txtDataInicio.Location = new Point(11, 15);
-            txtDataInicio.Mask = "99/99/9999";
-            txtDataInicio.MaxLength = 32767;
-            txtDataInicio.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
-            txtDataInicio.Name = "txtDataInicio";
-            txtDataInicio.PasswordChar = '\0';
-            txtDataInicio.PrefixSuffixText = null;
-            txtDataInicio.PromptChar = '_';
-            txtDataInicio.ReadOnly = false;
-            txtDataInicio.RejectInputOnFirstFailure = false;
-            txtDataInicio.ResetOnPrompt = true;
-            txtDataInicio.ResetOnSpace = true;
-            txtDataInicio.RightToLeft = RightToLeft.No;
-            txtDataInicio.SelectedText = "";
-            txtDataInicio.SelectionLength = 0;
-            txtDataInicio.SelectionStart = 0;
-            txtDataInicio.ShortcutsEnabled = true;
-            txtDataInicio.Size = new Size(97, 48);
-            txtDataInicio.SkipLiterals = true;
-            txtDataInicio.TabIndex = 9;
-            txtDataInicio.TabStop = false;
-            txtDataInicio.Text = "  /  /";
-            txtDataInicio.TextAlign = HorizontalAlignment.Left;
-            txtDataInicio.TextMaskFormat = MaskFormat.IncludeLiterals;
-            txtDataInicio.TrailingIcon = null;
-            txtDataInicio.UseSystemPasswordChar = false;
-            txtDataInicio.ValidatingType = null;
             // 
             // txtId
             // 
@@ -463,11 +377,55 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ControlDark;
-            label1.Location = new Point(15, 139);
+            label1.Location = new Point(15, 158);
             label1.Name = "label1";
             label1.Size = new Size(35, 28);
             label1.TabIndex = 11;
             label1.Text = "R$";
+            // 
+            // dtpDataConsulta
+            // 
+            dtpDataConsulta.CalendarMonthBackground = SystemColors.ScrollBar;
+            dtpDataConsulta.CalendarTitleBackColor = SystemColors.Highlight;
+            dtpDataConsulta.CalendarTrailingForeColor = SystemColors.ControlDark;
+            dtpDataConsulta.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            dtpDataConsulta.Format = DateTimePickerFormat.Short;
+            dtpDataConsulta.Location = new Point(371, 169);
+            dtpDataConsulta.MinDate = new DateTime(1903, 1, 1, 0, 0, 0, 0);
+            dtpDataConsulta.Name = "dtpDataConsulta";
+            dtpDataConsulta.Size = new Size(121, 27);
+            dtpDataConsulta.TabIndex = 16;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = SystemColors.ControlDarkDark;
+            label4.Location = new Point(404, 145);
+            label4.Name = "label4";
+            label4.Size = new Size(46, 21);
+            label4.TabIndex = 18;
+            label4.Text = "Data ";
+            // 
+            // chkDentista
+            // 
+            chkDentista.AutoSize = true;
+            chkDentista.Location = new Point(141, 125);
+            chkDentista.Name = "chkDentista";
+            chkDentista.Size = new Size(142, 19);
+            chkDentista.TabIndex = 20;
+            chkDentista.Text = "Pesquisar por dentista";
+            chkDentista.UseVisualStyleBackColor = true;
+            // 
+            // chkPaciente
+            // 
+            chkPaciente.AutoSize = true;
+            chkPaciente.Location = new Point(196, 148);
+            chkPaciente.Name = "chkPaciente";
+            chkPaciente.Size = new Size(145, 19);
+            chkPaciente.TabIndex = 21;
+            chkPaciente.Text = "Pesquisar por paciente";
+            chkPaciente.UseVisualStyleBackColor = true;
             // 
             // CadastroConsulta
             // 
@@ -495,16 +453,20 @@
         private ReaLTaiizor.Controls.MaterialComboBox cboNomeDentista;
         private ReaLTaiizor.Controls.MaterialComboBox cboNomePaciente;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtValorConsulta;
-        private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDataConsulta;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtDescricao;
         private Panel panel3;
-        private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDataInicio;
         private ReaLTaiizor.Controls.MaterialComboBox cboPesquisaNomePaciente;
         private ReaLTaiizor.Controls.MaterialComboBox cboPesquisaNomeDentista;
-        private ReaLTaiizor.Controls.MaterialMaskedTextBox txtDataFim;
         private ReaLTaiizor.Controls.MaterialButton btmPesquisar;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtId;
         private Label label1;
         private CheckBox chkTodos;
+        private DateTimePicker dtpInicio;
+        private Label label2;
+        private DateTimePicker dtpDataConsulta;
+        private Label label4;
+        private CheckBox chkPesquisarData;
+        private CheckBox chkPaciente;
+        private CheckBox chkDentista;
     }
 }
