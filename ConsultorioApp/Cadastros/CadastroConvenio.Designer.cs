@@ -43,40 +43,66 @@
             // 
             // tabCadastro
             // 
-            tabCadastro.Margin = new Padding(3, 5, 3, 5);
-            tabCadastro.Size = new Size(599, 616);
+            tabCadastro.Location = new Point(6, 65);
+            tabCadastro.Margin = new Padding(3, 4, 3, 4);
+            tabCadastro.Size = new Size(524, 462);
             // 
             // tabPageCadastro
             // 
             tabPageCadastro.Controls.Add(txtId);
             tabPageCadastro.Controls.Add(txtConvenio);
-            tabPageCadastro.Location = new Point(4, 31);
-            tabPageCadastro.Margin = new Padding(3, 5, 3, 5);
-            tabPageCadastro.Padding = new Padding(3, 5, 3, 5);
-            tabPageCadastro.Size = new Size(591, 581);
+            tabPageCadastro.Margin = new Padding(3, 4, 3, 4);
+            tabPageCadastro.Padding = new Padding(3, 4, 3, 4);
+            tabPageCadastro.Size = new Size(516, 427);
             tabPageCadastro.Controls.SetChildIndex(txtConvenio, 0);
             tabPageCadastro.Controls.SetChildIndex(panel1, 0);
             tabPageCadastro.Controls.SetChildIndex(txtId, 0);
             // 
             // panel1
             // 
-            panel1.Location = new Point(8, 477);
-            panel1.Margin = new Padding(3, 5, 3, 5);
+            panel1.Location = new Point(7, 165);
+            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Size = new Size(503, 47);
+            // 
+            // panel2
+            // 
+            panel2.Location = new Point(6, 367);
+            panel2.Margin = new Padding(3, 2, 3, 2);
+            panel2.Size = new Size(501, 54);
             // 
             // tabPageConsulta
             // 
             tabPageConsulta.Controls.Add(panel3);
-            tabPageConsulta.Location = new Point(4, 31);
-            tabPageConsulta.Margin = new Padding(3, 5, 3, 5);
-            tabPageConsulta.Padding = new Padding(3, 5, 3, 5);
-            tabPageConsulta.Size = new Size(591, 581);
+            tabPageConsulta.Margin = new Padding(3, 4, 3, 4);
+            tabPageConsulta.Padding = new Padding(3, 4, 3, 4);
+            tabPageConsulta.Size = new Size(516, 427);
             tabPageConsulta.Controls.SetChildIndex(panel2, 0);
             tabPageConsulta.Controls.SetChildIndex(panel3, 0);
             // 
+            // btnNovo
+            // 
+            btnNovo.Location = new Point(197, 10);
+            btnNovo.Margin = new Padding(4);
+            // 
+            // btnEditar
+            // 
+            btnEditar.Location = new Point(293, 10);
+            btnEditar.Margin = new Padding(4);
+            // 
+            // btnExcluir
+            // 
+            btnExcluir.Location = new Point(391, 10);
+            btnExcluir.Margin = new Padding(4);
+            // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(312, 5);
-            btnCancelar.Margin = new Padding(6, 11, 6, 11);
+            btnCancelar.Location = new Point(273, 4);
+            btnCancelar.Margin = new Padding(5, 8, 5, 8);
+            // 
+            // btnSalvar
+            // 
+            btnSalvar.Location = new Point(391, 4);
+            btnSalvar.Margin = new Padding(4);
             // 
             // txtConvenio
             // 
@@ -90,8 +116,7 @@
             txtConvenio.HideSelection = true;
             txtConvenio.Hint = "Convênio";
             txtConvenio.LeadingIcon = null;
-            txtConvenio.Location = new Point(7, 24);
-            txtConvenio.Margin = new Padding(3, 4, 3, 4);
+            txtConvenio.Location = new Point(7, 56);
             txtConvenio.MaxLength = 32767;
             txtConvenio.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtConvenio.Name = "txtConvenio";
@@ -103,7 +128,7 @@
             txtConvenio.SelectionLength = 0;
             txtConvenio.SelectionStart = 0;
             txtConvenio.ShortcutsEnabled = true;
-            txtConvenio.Size = new Size(503, 48);
+            txtConvenio.Size = new Size(440, 48);
             txtConvenio.TabIndex = 1;
             txtConvenio.TabStop = false;
             txtConvenio.TextAlign = HorizontalAlignment.Left;
@@ -114,10 +139,9 @@
             // 
             panel3.Controls.Add(btmPesquisar);
             panel3.Controls.Add(cboPesquisaConvenio);
-            panel3.Location = new Point(10, 8);
-            panel3.Margin = new Padding(3, 4, 3, 4);
+            panel3.Location = new Point(0, 6);
             panel3.Name = "panel3";
-            panel3.Size = new Size(573, 219);
+            panel3.Size = new Size(516, 164);
             panel3.TabIndex = 5;
             // 
             // btmPesquisar
@@ -128,8 +152,8 @@
             btmPesquisar.HighEmphasis = true;
             btmPesquisar.Icon = null;
             btmPesquisar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btmPesquisar.Location = new Point(222, 175);
-            btmPesquisar.Margin = new Padding(5, 8, 5, 8);
+            btmPesquisar.Location = new Point(194, 122);
+            btmPesquisar.Margin = new Padding(4, 6, 4, 6);
             btmPesquisar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btmPesquisar.Name = "btmPesquisar";
             btmPesquisar.NoAccentTextColor = Color.Empty;
@@ -155,12 +179,11 @@
             cboPesquisaConvenio.Hint = "Convênio";
             cboPesquisaConvenio.IntegralHeight = false;
             cboPesquisaConvenio.ItemHeight = 43;
-            cboPesquisaConvenio.Location = new Point(5, 63);
-            cboPesquisaConvenio.Margin = new Padding(3, 4, 3, 4);
+            cboPesquisaConvenio.Location = new Point(7, 47);
             cboPesquisaConvenio.MaxDropDownItems = 4;
             cboPesquisaConvenio.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboPesquisaConvenio.Name = "cboPesquisaConvenio";
-            cboPesquisaConvenio.Size = new Size(564, 49);
+            cboPesquisaConvenio.Size = new Size(500, 49);
             cboPesquisaConvenio.StartIndex = 0;
             cboPesquisaConvenio.TabIndex = 0;
             // 
@@ -172,12 +195,12 @@
             txtId.BackgroundImageLayout = ImageLayout.None;
             txtId.CharacterCasing = CharacterCasing.Normal;
             txtId.Depth = 0;
+            txtId.Enabled = false;
             txtId.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtId.HideSelection = true;
             txtId.Hint = "Id";
             txtId.LeadingIcon = null;
-            txtId.Location = new Point(517, 24);
-            txtId.Margin = new Padding(3, 4, 3, 4);
+            txtId.Location = new Point(452, 56);
             txtId.MaxLength = 32767;
             txtId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtId.Name = "txtId";
@@ -189,7 +212,7 @@
             txtId.SelectionLength = 0;
             txtId.SelectionStart = 0;
             txtId.ShortcutsEnabled = true;
-            txtId.Size = new Size(48, 48);
+            txtId.Size = new Size(58, 48);
             txtId.TabIndex = 11;
             txtId.TabStop = false;
             txtId.TextAlign = HorizontalAlignment.Left;
@@ -198,13 +221,13 @@
             // 
             // CadastroConvenio
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(615, 713);
+            ClientSize = new Size(538, 535);
             Location = new Point(0, 0);
-            Margin = new Padding(3, 5, 3, 5);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "CadastroConvenio";
-            Padding = new Padding(3, 113, 3, 5);
+            Padding = new Padding(3, 85, 3, 4);
             Text = "CadastroConvenio";
             tabCadastro.ResumeLayout(false);
             tabPageCadastro.ResumeLayout(false);

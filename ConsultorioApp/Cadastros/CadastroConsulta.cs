@@ -160,47 +160,40 @@ namespace Consultorio.App.Cadastros
             {
                 var dentista = (DentistaModel)cboPesquisaNomeDentista.SelectedItem;
                 var paciente = (PacienteModel)cboPesquisaNomePaciente.SelectedItem;
+                var consultas = _consultaService.Get<ConsultaModel>(new List<String>() { "Dentista", "Paciente" }).ToList(); ;
 
-               
 
                 if (chkDentista.Checked)
                 {
-                   
 
-                    var consultas = _consultaService.Get<ConsultaModel>(new List<String>() { "Dentista", "Paciente" })
-                       .Where(x => x.idDentista == dentista.Id)
-                       .ToList();
+                    consultas = consultas
+                      .Where(x => x.idDentista == dentista.Id)
+                      .ToList();
 
-                    dataGridViewConsulta.DataSource = consultas;
                 }
-                else
+
+                if (chkPaciente.Checked)
                 {
-                    if (chkPaciente.Checked)
-                    {
-                        var consultas = _consultaService.Get<ConsultaModel>(new List<String>() { "Dentista", "Paciente" })
-                       .Where(x => x.idPaciente == paciente.Id)
-                       .ToList();
+                    consultas = consultas
+                  .Where(x => x.idPaciente == paciente.Id)
+                  .ToList();
 
-                        dataGridViewConsulta.DataSource = consultas;
-                    }
-                    else
-                    {
-                        if (chkPesquisarData.Checked)
-                        {
-                            var dataInicio = dtpInicio.Value;
-
-
-                            consultas = _consultaService.Get<ConsultaModel>(new List<String>() { "Dentista", "Paciente" })
-                                    .Where(x => x.Data == dataInicio).ToList();
-
-                            dataGridViewConsulta.DataSource = consultas;
-
-                        }
-                    }
                 }
 
+                if (chkPesquisarData.Checked)
+                {
+                    var dataInicio = dtpInicio.Value.ToShortDateString();
+
+
+                    consultas = consultas
+                        .Where(x => x.Data.ToString()!.Split(" ")[0] == dataInicio).ToList();
+
+                }
+
+
+                dataGridViewConsulta.DataSource = consultas;
                 //dataGridViewConsulta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                dataGridViewConsulta.Columns["IdConvenio"]!.Visible = false;
+                dataGridViewConsulta.Columns["IdDentista"]!.Visible = false;
                 dataGridViewConsulta.Columns["IdPaciente"]!.Visible = false;
             }
         }

@@ -4,6 +4,7 @@ using Consultorio.Domain.Entities;
 using Consultorio.Service.Validators;
 using ConsultorioApp.Models;
 using System.Reflection.PortableExecutable;
+using System.Text.RegularExpressions;
 
 namespace Consultorio.App.Cadastros
 {
@@ -84,98 +85,108 @@ namespace Consultorio.App.Cadastros
 
         protected override void Salvar()
         {
-            try
+
+            if (String.IsNullOrEmpty(txtNome.Text) || String.IsNullOrEmpty(Regex.Replace(txtCPF.Text, @"[^\d]", "")) || String.IsNullOrEmpty(Regex.Replace(txtTelefone.Text, @"[^\d]", "")))
             {
-                if (IsAlteracao)
+                Utils.Utils.messageExclamation("Coloque todos os dados!", "Dentista");
+            }
+            else
+            {
+                try
                 {
-                    if (int.TryParse(txtId.Text, out var id))
+                    if (IsAlteracao)
                     {
-                        var dentista = _dentistaService.GetById<Dentista>(id);
+                        if (int.TryParse(txtId.Text, out var id))
+                        {
+                            var dentista = _dentistaService.GetById<Dentista>(id);
+                            PreencheObjeto(dentista);
+                            dentista = _dentistaService.Update<Dentista, Dentista, DentistaValidator>(dentista);
+
+
+                            foreach (ListViewItem item in lstEspecialidades.Items)
+                            {
+
+                                if (int.TryParse(item.Text.Split("-")[0].ToString(), out var idEsp))
+                                {
+                                    var dentEsp = _dentistaEspecialidadeService.Get<DentistaEspecialidade>(new List<String>() { "Especialidade", "Dentista" })
+                                            .Where(x => x.Especialidade!.Id == idEsp && x.Dentista!.Id == id)
+                                            .FirstOrDefault();
+
+                                    if (dentEsp != null)
+                                    {
+
+                                        if (!item.Selected)
+                                        {
+                                            _dentistaEspecialidadeService.Delete(dentEsp!.Id);
+                                        }
+
+                                    }
+
+                                    else
+                                    {
+
+                                        if (item.Selected)
+                                        {
+                                            var especialidade = new Especialidade()
+                                            {
+                                                Id = idEsp,
+                                                Nome = item.Text.Split("-")[1].ToString()
+                                            };
+
+                                            _dentistaEspecialidadeService.Add<DentistaEspecialidade, DentistaEspecialidade, DentistaEspecialidadeValidator>(new DentistaEspecialidade()
+                                            {
+                                                Dentista = dentista,
+                                                Especialidade = especialidade
+                                            });
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
+
+                        LimpaCampos();
+                    }
+                    else
+                    {
+                        var dentista = new Dentista();
                         PreencheObjeto(dentista);
-                        dentista = _dentistaService.Update<Dentista, Dentista, DentistaValidator>(dentista);
+                        dentista = _dentistaService.Add<Dentista, Dentista, DentistaValidator>(dentista);
 
-
-                        foreach (ListViewItem item in lstEspecialidades.Items)
+                        foreach (ListViewItem item in lstEspecialidades.SelectedItems)
                         {
 
-                            if (int.TryParse(item.Text.Split("-")[0].ToString(), out var idEsp))
+                            if (int.TryParse(item.Text.Split("-")[0].ToString(), out var id))
                             {
-                                var dentEsp = _dentistaEspecialidadeService.Get<DentistaEspecialidade>(new List<String>() { "Especialidade", "Dentista" })
-                                        .Where(x => x.Especialidade!.Id == idEsp && x.Dentista!.Id == id)
-                                        .FirstOrDefault();
+                                var especialidade = _especialidadeService.Get<Especialidade>().Where(x => x.Id == id).FirstOrDefault();
 
-                                if (dentEsp != null)
+
+                                if (especialidade != null)
                                 {
-
-                                    if (!item.Selected)
+                                    var dentEsp = new DentistaEspecialidade()
                                     {
-                                        _dentistaEspecialidadeService.Delete(dentEsp!.Id);
-                                    }
+                                        Dentista = dentista,
+                                        Especialidade = especialidade,
+                                    };
+                                    _dentistaEspecialidade.Add(dentEsp);
 
-                                }
-
-                                else
-                                {
-
-                                    if (item.Selected)
-                                    {
-                                        var especialidade = new Especialidade()
-                                        {
-                                            Id = idEsp,
-                                            Nome = item.Text.Split("-")[1].ToString()
-                                        };
-
-                                        _dentistaEspecialidadeService.Add<DentistaEspecialidade, DentistaEspecialidade, DentistaEspecialidadeValidator>(new DentistaEspecialidade()
-                                        {
-                                            Dentista = dentista,
-                                            Especialidade = especialidade
-                                        });
-                                    }
+                                    _dentistaEspecialidadeService.Add<DentistaEspecialidade, DentistaEspecialidade, DentistaEspecialidadeValidator>(dentEsp);
                                 }
                             }
                         }
 
+                        LimpaCampos();
                     }
 
-                    LimpaCampos();
+                    tabCadastro.SelectedIndex = 1;
                 }
-                else
+                catch (Exception ex)
                 {
-                    var dentista = new Dentista();
-                    PreencheObjeto(dentista);
-                    dentista = _dentistaService.Add<Dentista, Dentista, DentistaValidator>(dentista);
-
-                    foreach (ListViewItem item in lstEspecialidades.SelectedItems)
-                    {
-
-                        if (int.TryParse(item.Text.Split("-")[0].ToString(), out var id))
-                        {
-                            var especialidade = _especialidadeService.Get<Especialidade>().Where(x => x.Id == id).FirstOrDefault();
-
-
-                            if (especialidade != null)
-                            {
-                                var dentEsp = new DentistaEspecialidade()
-                                {
-                                    Dentista = dentista,
-                                    Especialidade = especialidade,
-                                };
-                                _dentistaEspecialidade.Add(dentEsp);
-
-                                _dentistaEspecialidadeService.Add<DentistaEspecialidade, DentistaEspecialidade, DentistaEspecialidadeValidator>(dentEsp);
-                            }
-                        }
-                    }
-
-                    LimpaCampos();
+                    MessageBox.Show(ex.Message, @"Consultório", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
 
-                tabCadastro.SelectedIndex = 1;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, @"Consultório", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
 
         protected override void Deletar(int id)

@@ -49,7 +49,7 @@
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(2, 2, 0, 2);
             menuStrip1.RightToLeft = RightToLeft.No;
-            menuStrip1.Size = new Size(1027, 24);
+            menuStrip1.Size = new Size(1047, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -108,7 +108,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonFace;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1031, 788);
+            ClientSize = new Size(1051, 788);
             Controls.Add(menuStrip1);
             DrawerHamburgerCursor = Cursors.Default;
             Font = new Font("Calibri", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -126,7 +126,7 @@
             Text = "Consultório";
             TopMost = true;
             TransparencyKey = Color.White;
-            WindowState = FormWindowState.Minimized;
+            WindowState = FormWindowState.Maximized;
             FormClosing += FormPrincipal_FormClosing;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

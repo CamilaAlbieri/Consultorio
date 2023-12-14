@@ -33,6 +33,8 @@
             txtValorConsulta = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtDescricao = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             panel3 = new Panel();
+            chkPaciente = new CheckBox();
+            chkDentista = new CheckBox();
             chkPesquisarData = new CheckBox();
             label2 = new Label();
             dtpInicio = new DateTimePicker();
@@ -44,8 +46,6 @@
             label1 = new Label();
             dtpDataConsulta = new DateTimePicker();
             label4 = new Label();
-            chkDentista = new CheckBox();
-            chkPaciente = new CheckBox();
             tabCadastro.SuspendLayout();
             tabPageCadastro.SuspendLayout();
             panel1.SuspendLayout();
@@ -98,6 +98,14 @@
             tabPageConsulta.Controls.SetChildIndex(panel2, 0);
             tabPageConsulta.Controls.SetChildIndex(panel3, 0);
             // 
+            // btnNovo
+            // 
+            btnNovo.Location = new Point(225, 13);
+            // 
+            // btnEditar
+            // 
+            btnEditar.Location = new Point(317, 13);
+            // 
             // btnCancelar
             // 
             btnCancelar.Location = new Point(288, 4);
@@ -125,7 +133,7 @@
             cboNomePaciente.MaxDropDownItems = 4;
             cboNomePaciente.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboNomePaciente.Name = "cboNomePaciente";
-            cboNomePaciente.Size = new Size(477, 49);
+            cboNomePaciente.Size = new Size(498, 49);
             cboNomePaciente.StartIndex = 0;
             cboNomePaciente.TabIndex = 5;
             // 
@@ -176,7 +184,7 @@
             txtValorConsulta.SelectionLength = 0;
             txtValorConsulta.SelectionStart = 0;
             txtValorConsulta.ShortcutsEnabled = true;
-            txtValorConsulta.Size = new Size(309, 48);
+            txtValorConsulta.Size = new Size(330, 48);
             txtValorConsulta.TabIndex = 7;
             txtValorConsulta.TabStop = false;
             txtValorConsulta.Tag = "";
@@ -208,7 +216,7 @@
             txtDescricao.SelectionLength = 0;
             txtDescricao.SelectionStart = 0;
             txtDescricao.ShortcutsEnabled = true;
-            txtDescricao.Size = new Size(477, 48);
+            txtDescricao.Size = new Size(498, 48);
             txtDescricao.TabIndex = 9;
             txtDescricao.TabStop = false;
             txtDescricao.TextAlign = HorizontalAlignment.Left;
@@ -230,6 +238,26 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(507, 179);
             panel3.TabIndex = 5;
+            // 
+            // chkPaciente
+            // 
+            chkPaciente.AutoSize = true;
+            chkPaciente.Location = new Point(196, 148);
+            chkPaciente.Name = "chkPaciente";
+            chkPaciente.Size = new Size(145, 19);
+            chkPaciente.TabIndex = 21;
+            chkPaciente.Text = "Pesquisar por paciente";
+            chkPaciente.UseVisualStyleBackColor = true;
+            // 
+            // chkDentista
+            // 
+            chkDentista.AutoSize = true;
+            chkDentista.Location = new Point(141, 125);
+            chkDentista.Name = "chkDentista";
+            chkDentista.Size = new Size(142, 19);
+            chkDentista.TabIndex = 20;
+            chkDentista.Text = "Pesquisar por dentista";
+            chkDentista.UseVisualStyleBackColor = true;
             // 
             // chkPesquisarData
             // 
@@ -294,6 +322,7 @@
             btmPesquisar.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
             btmPesquisar.UseAccentColor = false;
             btmPesquisar.UseVisualStyleBackColor = true;
+            btmPesquisar.Click += btmPesquisar_Click;
             // 
             // cboPesquisaNomePaciente
             // 
@@ -349,6 +378,7 @@
             txtId.BackgroundImageLayout = ImageLayout.None;
             txtId.CharacterCasing = CharacterCasing.Normal;
             txtId.Depth = 0;
+            txtId.Enabled = false;
             txtId.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtId.HideSelection = true;
             txtId.Hint = "Id";
@@ -365,7 +395,7 @@
             txtId.SelectionLength = 0;
             txtId.SelectionStart = 0;
             txtId.ShortcutsEnabled = true;
-            txtId.Size = new Size(47, 48);
+            txtId.Size = new Size(70, 48);
             txtId.TabIndex = 10;
             txtId.TabStop = false;
             txtId.TextAlign = HorizontalAlignment.Left;
@@ -390,7 +420,7 @@
             dtpDataConsulta.CalendarTrailingForeColor = SystemColors.ControlDark;
             dtpDataConsulta.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             dtpDataConsulta.Format = DateTimePickerFormat.Short;
-            dtpDataConsulta.Location = new Point(371, 169);
+            dtpDataConsulta.Location = new Point(392, 169);
             dtpDataConsulta.MinDate = new DateTime(1903, 1, 1, 0, 0, 0, 0);
             dtpDataConsulta.Name = "dtpDataConsulta";
             dtpDataConsulta.Size = new Size(121, 27);
@@ -401,31 +431,11 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = SystemColors.ControlDarkDark;
-            label4.Location = new Point(404, 145);
+            label4.Location = new Point(427, 145);
             label4.Name = "label4";
             label4.Size = new Size(46, 21);
             label4.TabIndex = 18;
             label4.Text = "Data ";
-            // 
-            // chkDentista
-            // 
-            chkDentista.AutoSize = true;
-            chkDentista.Location = new Point(141, 125);
-            chkDentista.Name = "chkDentista";
-            chkDentista.Size = new Size(142, 19);
-            chkDentista.TabIndex = 20;
-            chkDentista.Text = "Pesquisar por dentista";
-            chkDentista.UseVisualStyleBackColor = true;
-            // 
-            // chkPaciente
-            // 
-            chkPaciente.AutoSize = true;
-            chkPaciente.Location = new Point(196, 148);
-            chkPaciente.Name = "chkPaciente";
-            chkPaciente.Size = new Size(145, 19);
-            chkPaciente.TabIndex = 21;
-            chkPaciente.Text = "Pesquisar por paciente";
-            chkPaciente.UseVisualStyleBackColor = true;
             // 
             // CadastroConsulta
             // 

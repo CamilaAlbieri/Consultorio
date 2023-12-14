@@ -49,7 +49,7 @@
             // 
             // tabCadastro
             // 
-            tabCadastro.Location = new Point(6, 64);
+            tabCadastro.Location = new Point(6, 68);
             tabCadastro.Margin = new Padding(3, 2, 3, 2);
             tabCadastro.Size = new Size(524, 408);
             // 
@@ -76,13 +76,13 @@
             // 
             panel1.Location = new Point(4, 360);
             panel1.Margin = new Padding(3, 4, 3, 4);
-            panel1.Size = new Size(443, 47);
+            panel1.Size = new Size(506, 47);
             // 
             // panel2
             // 
-            panel2.Location = new Point(12, 297);
+            panel2.Location = new Point(9, 367);
             panel2.Margin = new Padding(3, 2, 3, 2);
-            panel2.Size = new Size(498, 65);
+            panel2.Size = new Size(516, 65);
             // 
             // tabPageConsulta
             // 
@@ -115,7 +115,7 @@
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(359, 3);
+            btnSalvar.Location = new Point(410, 3);
             btnSalvar.Margin = new Padding(4);
             // 
             // txtNome
@@ -181,7 +181,7 @@
             txtTelefone.SelectionLength = 0;
             txtTelefone.SelectionStart = 0;
             txtTelefone.ShortcutsEnabled = true;
-            txtTelefone.Size = new Size(477, 48);
+            txtTelefone.Size = new Size(485, 48);
             txtTelefone.SkipLiterals = true;
             txtTelefone.TabIndex = 2;
             txtTelefone.TabStop = false;
@@ -225,7 +225,7 @@
             txtCPF.SelectionLength = 0;
             txtCPF.SelectionStart = 0;
             txtCPF.ShortcutsEnabled = true;
-            txtCPF.Size = new Size(477, 48);
+            txtCPF.Size = new Size(485, 48);
             txtCPF.SkipLiterals = true;
             txtCPF.TabIndex = 3;
             txtCPF.TabStop = false;
@@ -309,6 +309,7 @@
             txtId.BackgroundImageLayout = ImageLayout.None;
             txtId.CharacterCasing = CharacterCasing.Normal;
             txtId.Depth = 0;
+            txtId.Enabled = false;
             txtId.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtId.HideSelection = true;
             txtId.Hint = "Id";
@@ -325,7 +326,7 @@
             txtId.SelectionLength = 0;
             txtId.SelectionStart = 0;
             txtId.ShortcutsEnabled = true;
-            txtId.Size = new Size(42, 48);
+            txtId.Size = new Size(52, 48);
             txtId.TabIndex = 11;
             txtId.TabStop = false;
             txtId.TextAlign = HorizontalAlignment.Left;
@@ -339,7 +340,7 @@
             lstEspecialidades.Location = new Point(13, 195);
             lstEspecialidades.Margin = new Padding(3, 2, 3, 2);
             lstEspecialidades.Name = "lstEspecialidades";
-            lstEspecialidades.Size = new Size(477, 150);
+            lstEspecialidades.Size = new Size(487, 150);
             lstEspecialidades.TabIndex = 12;
             lstEspecialidades.UseCompatibleStateImageBehavior = false;
             lstEspecialidades.View = View.List;
@@ -351,6 +352,7 @@
             // lblesps
             // 
             lblesps.AutoSize = true;
+            lblesps.ForeColor = SystemColors.ActiveCaptionText;
             lblesps.Location = new Point(15, 178);
             lblesps.Name = "lblesps";
             lblesps.Size = new Size(231, 15);
@@ -361,7 +363,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(536, 478);
+            ClientSize = new Size(536, 548);
             Location = new Point(0, 0);
             Margin = new Padding(3, 4, 3, 4);
             Name = "CadastroDentista";

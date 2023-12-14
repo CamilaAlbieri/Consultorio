@@ -75,13 +75,13 @@
             // 
             panel1.Location = new Point(4, 338);
             panel1.Margin = new Padding(3, 4, 3, 4);
-            panel1.Size = new Size(443, 47);
+            panel1.Size = new Size(519, 69);
             // 
             // panel2
             // 
-            panel2.Location = new Point(9, 342);
+            panel2.Location = new Point(0, 364);
             panel2.Margin = new Padding(3, 2, 3, 2);
-            panel2.Size = new Size(514, 67);
+            panel2.Size = new Size(527, 55);
             // 
             // tabPageConsulta
             // 
@@ -95,27 +95,27 @@
             // btnNovo
             // 
             btnNovo.Location = new Point(220, 10);
-            btnNovo.Margin = new Padding(4, 4, 4, 4);
+            btnNovo.Margin = new Padding(4);
             // 
             // btnEditar
             // 
             btnEditar.Location = new Point(318, 10);
-            btnEditar.Margin = new Padding(4, 4, 4, 4);
+            btnEditar.Margin = new Padding(4);
             // 
             // btnExcluir
             // 
             btnExcluir.Location = new Point(417, 10);
-            btnExcluir.Margin = new Padding(4, 4, 4, 4);
+            btnExcluir.Margin = new Padding(4);
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(268, 3);
-            btnCancelar.Margin = new Padding(4, 4, 4, 4);
+            btnCancelar.Location = new Point(273, 19);
+            btnCancelar.Margin = new Padding(4);
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(359, 3);
-            btnSalvar.Margin = new Padding(4, 4, 4, 4);
+            btnSalvar.Location = new Point(410, 19);
+            btnSalvar.Margin = new Padding(4);
             // 
             // txtCPF
             // 
@@ -149,7 +149,7 @@
             txtCPF.SelectionLength = 0;
             txtCPF.SelectionStart = 0;
             txtCPF.ShortcutsEnabled = true;
-            txtCPF.Size = new Size(477, 48);
+            txtCPF.Size = new Size(488, 48);
             txtCPF.SkipLiterals = true;
             txtCPF.TabIndex = 6;
             txtCPF.TabStop = false;
@@ -192,7 +192,7 @@
             txtTelefone.SelectionLength = 0;
             txtTelefone.SelectionStart = 0;
             txtTelefone.ShortcutsEnabled = true;
-            txtTelefone.Size = new Size(477, 48);
+            txtTelefone.Size = new Size(488, 48);
             txtTelefone.SkipLiterals = true;
             txtTelefone.TabIndex = 5;
             txtTelefone.TabStop = false;
@@ -258,7 +258,7 @@
             txtObservacao.SelectionLength = 0;
             txtObservacao.SelectionStart = 0;
             txtObservacao.ShortcutsEnabled = true;
-            txtObservacao.Size = new Size(472, 48);
+            txtObservacao.Size = new Size(483, 48);
             txtObservacao.TabIndex = 7;
             txtObservacao.TabStop = false;
             txtObservacao.TextAlign = HorizontalAlignment.Left;
@@ -284,7 +284,7 @@
             cboConvenio.MaxDropDownItems = 4;
             cboConvenio.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboConvenio.Name = "cboConvenio";
-            cboConvenio.Size = new Size(470, 49);
+            cboConvenio.Size = new Size(483, 49);
             cboConvenio.StartIndex = 0;
             cboConvenio.TabIndex = 8;
             // 
@@ -361,6 +361,7 @@
             txtId.BackgroundImageLayout = ImageLayout.None;
             txtId.CharacterCasing = CharacterCasing.Normal;
             txtId.Depth = 0;
+            txtId.Enabled = false;
             txtId.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Regular, GraphicsUnit.Pixel);
             txtId.HideSelection = true;
             txtId.Hint = "Id";
@@ -377,7 +378,7 @@
             txtId.SelectionLength = 0;
             txtId.SelectionStart = 0;
             txtId.ShortcutsEnabled = true;
-            txtId.Size = new Size(42, 48);
+            txtId.Size = new Size(55, 48);
             txtId.TabIndex = 12;
             txtId.TabStop = false;
             txtId.TextAlign = HorizontalAlignment.Left;
@@ -388,7 +389,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(548, 523);
+            ClientSize = new Size(548, 519);
             Location = new Point(0, 0);
             Margin = new Padding(3, 4, 3, 4);
             Name = "CadastroPaciente";

@@ -3,6 +3,7 @@ using Consultorio.Domain.Entities;
 using Consultorio.Service.Validators;
 using ConsultorioApp.Models;
 using ReaLTaiizor.Controls;
+using System.Text.RegularExpressions;
 
 namespace Consultorio.App.Base
 {
@@ -51,73 +52,82 @@ namespace Consultorio.App.Base
 
         protected override void Salvar()
         {
-            try
+
+            if (String.IsNullOrEmpty(txtNome.Text) || String.IsNullOrEmpty(Regex.Replace(txtCPF.Text, @"[^\d]", "")) || String.IsNullOrEmpty(Regex.Replace(txtTelefone.Text, @"[^\d]", "")))
             {
-
-
-                if (IsAlteracao)
+                Utils.Utils.messageExclamation("Coloque todos os dados!", "Paciente");
+            }
+            else
+            {
+                try
                 {
 
 
-                    if (int.TryParse(txtId.Text, out var id))
+                    if (IsAlteracao)
                     {
 
-                        var pacExiste = _pacienteService.Get<Paciente>(new List<String>() { "Convenio" }).Where(x => x.CPF == txtCPF.Text && x.Id != id)
-                        .FirstOrDefault();
 
-                        if (pacExiste == null)
+                        if (int.TryParse(txtId.Text, out var id))
                         {
-                            var paciente = _pacienteService.GetById<Paciente>(id, new List<String>() { "Convenio" });
-                            PreencheObjeto(paciente);
 
-                            _pacienteService.Delete(paciente.Id);
-                            _pacienteService.Add<Paciente, Paciente, PacienteValidator>(paciente);
+                            var pacExiste = _pacienteService.Get<Paciente>(new List<String>() { "Convenio" }).Where(x => x.CPF == txtCPF.Text && x.Id != id)
+                            .FirstOrDefault();
 
-                            Utils.Utils.messageBoxOk("Paciente atualizado com sucesso!", "Paciente");
-                            LimpaCampos();
-                            //_pacienteService.Update<Paciente, Paciente, PacienteValidator>(paciente);
+                            if (pacExiste == null)
+                            {
+                                var paciente = _pacienteService.GetById<Paciente>(id, new List<String>() { "Convenio" });
+                                PreencheObjeto(paciente);
+
+                                _pacienteService.Delete(paciente.Id);
+                                _pacienteService.Add<Paciente, Paciente, PacienteValidator>(paciente);
+
+                                Utils.Utils.messageBoxOk("Paciente atualizado com sucesso!", "Paciente");
+                                LimpaCampos();
+                                //_pacienteService.Update<Paciente, Paciente, PacienteValidator>(paciente);
+                            }
+
+
                         }
 
 
                     }
-
-
-                }
-                else
-                {
-                    var pacExiste = _pacienteService.Get<Paciente>(new List<String>() { "Convenio" }).Where(x => x.CPF == txtCPF.Text).FirstOrDefault();
-
-
-                    if (pacExiste == null)
-                    {
-
-                        var paciente = new Paciente();
-                        PreencheObjeto(paciente);
-                        _pacienteService.Add<Paciente, Paciente, PacienteValidator>(paciente);
-                        Utils.Utils.messageExclamation("Paciente cadastrado com sucesso!", "Paciente");
-
-                        LimpaCampos();
-
-                    }
                     else
                     {
-                        Utils.Utils.messageExclamation("Não pode cadastrar um paciente com o mesmo cpf!", "Paciente");
+                        var pacExiste = _pacienteService.Get<Paciente>(new List<String>() { "Convenio" }).Where(x => x.CPF == txtCPF.Text).FirstOrDefault();
+
+
+                        if (pacExiste == null)
+                        {
+
+                            var paciente = new Paciente();
+                            PreencheObjeto(paciente);
+                            _pacienteService.Add<Paciente, Paciente, PacienteValidator>(paciente);
+                            Utils.Utils.messageExclamation("Paciente cadastrado com sucesso!", "Paciente");
+
+                            LimpaCampos();
+
+                        }
+                        else
+                        {
+                            Utils.Utils.messageExclamation("Não pode cadastrar um paciente com o mesmo cpf!", "Paciente");
+
+                        }
+
+
 
                     }
+
+                    tabCadastro.SelectedIndex = 1;
 
 
 
                 }
-
-                tabCadastro.SelectedIndex = 1;
-
-
-
+                catch (Exception)
+                {
+                    Utils.Utils.messageExclamation("Esse cpf já existe!", "Paciente");
+                }
             }
-            catch (Exception)
-            {
-                Utils.Utils.messageExclamation("Esse cpf já existe!", "Paciente");
-            }
+
         }
 
         protected override void Deletar(int id)
